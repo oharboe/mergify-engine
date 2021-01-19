@@ -127,6 +127,7 @@
 <li class="toctree-l2"><a class="reference internal" href="actions.html#dismiss-reviews">dismiss_reviews</a></li>
 <li class="toctree-l2"><a class="reference internal" href="actions.html#label">label</a></li>
 <li class="toctree-l2"><a class="reference internal" href="actions.html#merge">merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html#queue">queue</a></li>
 <li class="toctree-l2"><a class="reference internal" href="actions.html#request-reviews">request_reviews</a></li>
 <li class="toctree-l2"><a class="reference internal" href="actions.html#rebase">rebase</a></li>
 <li class="toctree-l2"><a class="reference internal" href="actions.html#update">update</a></li>
@@ -138,6 +139,13 @@
 <li class="toctree-l2"><a class="reference internal" href="commands.html#update">update</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands.html#backport">backport</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands.html#refresh">refresh</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="queues.html">🔀 Queue Rules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="queues.html#the-merge-train">The Merge Train</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html#working-with-queue-rules">Working with Queue Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html#example">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html#queue-rule-parameters">Queue Rule Parameters</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="merge-action.html">🔀 Delving into the Merge Action</a><ul>
@@ -186,11 +194,11 @@
             
   <div class="section" id="conditions">
 <span id="id1"></span><h1>🎯 Conditions<a class="headerlink" href="#conditions" title="Permalink to this headline"> 🔗</a></h1>
-<p>Conditions are used in pull request rules to check if a pull request matches a
-certain rule. If a pull request matches all of the listed conditions in a rule,
-the subsequent actions listed in that rule will be applied. Conditions must be
-listed under the <code class="docutils literal notranslate"><span class="pre">conditions</span></code> section of the <code class="docutils literal notranslate"><span class="pre">pull_request_rules</span></code> entries —
-see <a class="reference internal" href="configuration.html#configuration-file-format"><span class="std std-ref">🔖 Configuration File</span></a>.</p>
+<p>Conditions are used in pull request rules and queue rules to check if a pull
+request matches a certain rule. If a pull request matches all of the listed
+conditions in a rule, the subsequent actions listed in that rule will be
+applied. Conditions must be listed under the <code class="docutils literal notranslate"><span class="pre">conditions</span></code> section of the
+<code class="docutils literal notranslate"><span class="pre">pull_request_rules</span></code> or <code class="docutils literal notranslate"><span class="pre">queue_rules</span></code> entries — see <a class="reference internal" href="configuration.html#configuration-file-format"><span class="std std-ref">🔖 Configuration File</span></a>.</p>
 <div class="section" id="grammar">
 <h2>Grammar<a class="headerlink" href="#grammar" title="Permalink to this headline"> 🔗</a></h2>
 <p>A condition is a string that has the following format:</p>
