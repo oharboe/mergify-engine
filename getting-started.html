@@ -169,6 +169,7 @@
 <li class="toctree-l2"><a class="reference internal" href="examples.html#flexible-reviewers-assignment">👀 Flexible Reviewers Assignment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples.html#running-ci-pipelines-automatically">💬 Running CI pipelines automatically</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples.html#enforcing-pull-request-guidelines">📜 Enforcing Pull Request Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#updating-pr-for-linear-history">🐍 Updating PR for linear history</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples.html#bots">🤖 Bots</a></li>
 </ul>
 </li>
@@ -267,6 +268,11 @@ must contains at least 1 member (note the length operator <code class="docutils 
 <code class="docutils literal notranslate"><span class="pre">merge</span></code> action with a <code class="docutils literal notranslate"><span class="pre">method</span></code> parameter containing the merge method to
 use.</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Mergify is event-driven: rules are only executed when pull requests are updated
+or when the bot is manually triggered in a comment with <cite>&#64;Mergifyio refresh</cite> (see <a class="reference internal" href="commands.html#commands"><span class="std std-ref">⚙️ Commands</span></a>).</p>
+</div>
 <p>Fore more details about the configuration file format, check
 <a class="reference internal" href="configuration.html#configuration-file-format"><span class="std std-ref">🔖 Configuration File</span></a>.</p>
 </div>
