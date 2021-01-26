@@ -675,64 +675,6 @@ end of the title.</p></li>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="queue">
-<h2>queue<a class="headerlink" href="#queue" title="Permalink to this headline"> 🔗</a></h2>
-<p><div style="text-align: right"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan feature 🦾</span></a></div>
-<div style="text-align: right"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-info">Beta feature ⚙️</span></a></div></p>
-<p>The <code class="docutils literal notranslate"><span class="pre">queue</span></code> action moves the pull request into one of the merge queue defined
-in <code class="docutils literal notranslate"><span class="pre">queue_rules</span></code>. The <code class="docutils literal notranslate"><span class="pre">queue</span></code> action takes the following parameter:</p>
-<table class="colwidths-given docutils align-default">
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Key Name</p></th>
-<th class="head"><p>Value Type</p></th>
-<th class="head"><p>Default</p></th>
-<th class="head"><p>Value Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
-<td><p>string</p></td>
-<td></td>
-<td><p>The name of the merge queue where to move the pull request.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">merge_bot_account</span></code></p></td>
-<td><p>string</p></td>
-<td></td>
-<td><p>Mergify can impersonate a GitHub user to merge pull request.
-If no <code class="docutils literal notranslate"><span class="pre">merge_bot_account</span></code> is set, Mergify will merge the pull request
-itself. The user account <strong>must</strong> have already been
-logged in Mergify dashboard once and have <strong>write</strong> or <strong>maintain</strong> permission.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">priority</span></code></p></td>
-<td><p>1 &lt;= integer &lt;= 10000 or <code class="docutils literal notranslate"><span class="pre">low</span></code> or <code class="docutils literal notranslate"><span class="pre">medium</span></code> or <code class="docutils literal notranslate"><span class="pre">high</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">medium</span></code></p></td>
-<td><p>This sets the priority of the pull request in the queued. The pull
-request with the highest priority is merged first.
-<code class="docutils literal notranslate"><span class="pre">low</span></code>, <code class="docutils literal notranslate"><span class="pre">medium</span></code>, <code class="docutils literal notranslate"><span class="pre">high</span></code> are aliases for <code class="docutils literal notranslate"><span class="pre">1000</span></code>, <code class="docutils literal notranslate"><span class="pre">2000</span></code>, <code class="docutils literal notranslate"><span class="pre">3000</span></code>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">commit_message</span></code></p></td>
-<td><p>string</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">default</span></code></p></td>
-<td><p>Defines what commit message to use when merging using the <code class="docutils literal notranslate"><span class="pre">squash</span></code> or
-<code class="docutils literal notranslate"><span class="pre">merge</span></code> method. Possible values are:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">default</span></code> to use the default commit message provided by GitHub
-or defined in the pull request body (see <a class="reference internal" href="#commit-message"><span class="std std-ref">Defining the Commit Message</span></a>).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">title+body</span></code> means to use the title and body from the pull request
-itself as the commit message. The pull request number will be added to
-end of the title.</p></li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
 <div class="section" id="branch-protection-settings">
 <h3>Branch Protection Settings<a class="headerlink" href="#branch-protection-settings" title="Permalink to this headline"> 🔗</a></h3>
 <p>Note that Mergify will always respect the branch protection settings. When the
@@ -799,8 +741,66 @@ the push, while it actually has been executed by Mergify.</p></li>
 </ul>
 </div>
 </div>
+<div class="section" id="queue">
+<span id="request-reviews-action"></span><h2>queue<a class="headerlink" href="#queue" title="Permalink to this headline"> 🔗</a></h2>
+<p><div style="text-align: right"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan feature 🦾</span></a></div>
+<div style="text-align: right"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-info">Beta feature ⚙️</span></a></div></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">queue</span></code> action moves the pull request into one of the merge queue defined
+in <code class="docutils literal notranslate"><span class="pre">queue_rules</span></code>. The <code class="docutils literal notranslate"><span class="pre">queue</span></code> action takes the following parameter:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key Name</p></th>
+<th class="head"><p>Value Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Value Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>The name of the merge queue where to move the pull request.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">merge_bot_account</span></code></p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>Mergify can impersonate a GitHub user to merge pull request.
+If no <code class="docutils literal notranslate"><span class="pre">merge_bot_account</span></code> is set, Mergify will merge the pull request
+itself. The user account <strong>must</strong> have already been
+logged in Mergify dashboard once and have <strong>write</strong> or <strong>maintain</strong> permission.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">priority</span></code></p></td>
+<td><p>1 &lt;= integer &lt;= 10000 or <code class="docutils literal notranslate"><span class="pre">low</span></code> or <code class="docutils literal notranslate"><span class="pre">medium</span></code> or <code class="docutils literal notranslate"><span class="pre">high</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">medium</span></code></p></td>
+<td><p>This sets the priority of the pull request in the queued. The pull
+request with the highest priority is merged first.
+<code class="docutils literal notranslate"><span class="pre">low</span></code>, <code class="docutils literal notranslate"><span class="pre">medium</span></code>, <code class="docutils literal notranslate"><span class="pre">high</span></code> are aliases for <code class="docutils literal notranslate"><span class="pre">1000</span></code>, <code class="docutils literal notranslate"><span class="pre">2000</span></code>, <code class="docutils literal notranslate"><span class="pre">3000</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">commit_message</span></code></p></td>
+<td><p>string</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">default</span></code></p></td>
+<td><p>Defines what commit message to use when merging using the <code class="docutils literal notranslate"><span class="pre">squash</span></code> or
+<code class="docutils literal notranslate"><span class="pre">merge</span></code> method. Possible values are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">default</span></code> to use the default commit message provided by GitHub
+or defined in the pull request body (see <a class="reference internal" href="#commit-message"><span class="std std-ref">Defining the Commit Message</span></a>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">title+body</span></code> means to use the title and body from the pull request
+itself as the commit message. The pull request number will be added to
+end of the title.</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="section" id="request-reviews">
-<span id="request-reviews-action"></span><h2>request_reviews<a class="headerlink" href="#request-reviews" title="Permalink to this headline"> 🔗</a></h2>
+<h2>request_reviews<a class="headerlink" href="#request-reviews" title="Permalink to this headline"> 🔗</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">request_reviews</span></code> action requests reviews from users for the pull
 request.</p>
 <table class="colwidths-given docutils align-default">
