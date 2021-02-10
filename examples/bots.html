@@ -210,16 +210,16 @@ project dependencies.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="greenkeeper">
-<h2>Greenkeeper<a class="headerlink" href="#greenkeeper" title="Permalink to this headline"> 🔗</a></h2>
-<p><a class="reference external" href="https://greenkeeper.io">Greenkeeper</a> sends automatic update of your <cite>npm</cite>
+<div class="section" id="snyk">
+<h2>Snyk<a class="headerlink" href="#snyk" title="Permalink to this headline"> 🔗</a></h2>
+<p><a class="reference external" href="https://snyk.io">Snyk</a> sends automatic security update of your project
 dependencies.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for Greenkeeper pull requests</span>
     <span class="nt">conditions</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">author=greenkeeper[bot]</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">check-success=Travis CI - Pull Request</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">check-success=greenkeeper/verify</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">title~=^\[Snyk\]</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">head~=^snyk-fix</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">check-success~=^security/snyk</span>
     <span class="nt">actions</span><span class="p">:</span>
       <span class="nt">merge</span><span class="p">:</span>
         <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
