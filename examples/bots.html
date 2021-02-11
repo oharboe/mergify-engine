@@ -197,8 +197,8 @@ integration system validates them. <code class="docutils literal notranslate"><s
 CI check name here — adjust it to whatever you use.</p>
 <div class="section" id="dependabot">
 <h2>Dependabot<a class="headerlink" href="#dependabot" title="Permalink to this headline"> 🔗</a></h2>
-<p><a class="reference external" href="https://dependabot.io">Dependabot</a> sends automatic security update of your
-project dependencies.</p>
+<p><a class="reference external" href="https://dependabot.io">Dependabot</a> sends automatic updates for your
+project’s dependencies.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for Dependabot pull requests</span>
     <span class="nt">conditions</span><span class="p">:</span>
@@ -212,10 +212,10 @@ project dependencies.</p>
 </div>
 <div class="section" id="snyk">
 <h2>Snyk<a class="headerlink" href="#snyk" title="Permalink to this headline"> 🔗</a></h2>
-<p><a class="reference external" href="https://snyk.io">Snyk</a> sends automatic security update of your project
-dependencies.</p>
+<p><a class="reference external" href="https://snyk.io">Snyk</a> sends automatic updates for your
+project’s dependencies.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for Greenkeeper pull requests</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for Snyk pull requests</span>
     <span class="nt">conditions</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">title~=^\[Snyk\]</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">head~=^snyk-fix</span>
@@ -228,7 +228,7 @@ dependencies.</p>
 </div>
 <div class="section" id="renovate">
 <h2>Renovate<a class="headerlink" href="#renovate" title="Permalink to this headline"> 🔗</a></h2>
-<p><a class="reference external" href="https://renovatebot.com/">Renovate</a> sends automatic update for your
+<p><a class="reference external" href="https://renovatebot.com/">Renovate</a> sends automatic updates for your
 project’s dependencies.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for Renovate pull requests</span>
@@ -259,8 +259,8 @@ project’s dependencies (only Python’s packages).</p>
 </div>
 <div class="section" id="pyup">
 <h2>PyUp<a class="headerlink" href="#pyup" title="Permalink to this headline"> 🔗</a></h2>
-<p><a class="reference external" href="https://pyup.io/">PyUp</a> sends automatic update for your project’s Python
-dependencies.</p>
+<p><a class="reference external" href="https://pyup.io/">PyUp</a> sends automatic updates for your project’s
+Python dependencies.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for PyUp pull requests</span>
     <span class="nt">conditions</span><span class="p">:</span>
