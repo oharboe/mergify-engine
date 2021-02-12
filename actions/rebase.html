@@ -4,12 +4,14 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Mergify Configuration Examples for Bots" name="description" />
-<meta content="mergify, examples, dependabot, greenkeeper, renovate, pyup, imgbot" name="keywords" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Mergify Documentation for Rebase Action" name="description" />
+<meta content="mergify, rebase, pull request" name="keywords" />
+<meta content="Rebase a pull request on top of its base branch." name="summary" />
+<meta content="undo" name="doc:icon" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <title>🤖 Bots &#8212; Mergify  documentation</title>
+    <title>rebase &#8212; Mergify  documentation</title>
 
   <link rel="stylesheet" href="../_bootstrap/bootstrap.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
@@ -38,7 +40,9 @@
   </script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="request_reviews" href="request_reviews.html" />
+    <link rel="prev" title="queue" href="queue.html" /> 
   </head><body>
 <div class="body-container">
   <nav class="navbar navbar-expand-md sticky-top navbar-light bg-white flex-wrap">
@@ -75,16 +79,27 @@
   <nav class="related d-flex justify-content-between flex-wrap" role="navigation" aria-label="related navigation">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="../index.html">Mergify  documentation</a></li>
-    <li class="breadcrumb-item active">🤖 Bots</li>
+    <li class="breadcrumb-item"><a href="index.html"
+                                   
+                                   accesskey="U"
+                                   class="active"
+                                   >🚀 Actions</a></li>
+    <li class="breadcrumb-item active">rebase</li>
   </ol>
   <div>
     <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+      <a href="queue.html" title="Previous Chapter: queue" class="btn btn-primary" role="button" accesskey="P">
+        &laquo; queue
+      </a>
+      <a href="request_reviews.html" title="Next Chapter: request_reviews" class="btn btn-primary" role="button" accesskey="N">
+        request_reviews &raquo;
+      </a>
     </div>
   </div>
 </nav>
   <div class="main container-fluid">
     <div class="row">
-      <div class="sphinxsidebar col-12 col-lg-4 col-xl-3" aria-label="main navigation"><ul>
+      <div class="sphinxsidebar col-12 col-lg-4 col-xl-3" aria-label="main navigation"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">➡️ Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../getting-started.html#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../getting-started.html#configuration">Configuration</a></li>
@@ -108,22 +123,22 @@
 <li class="toctree-l2"><a class="reference internal" href="../conditions.html#about-status-checks">About Status Checks</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../actions/index.html">🚀 Actions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../actions/assign.html">assign</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../actions/backport.html">backport</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../actions/close.html">close</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../actions/copy.html">copy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../actions/comment.html">comment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../actions/delete_head_branch.html">delete_head_branch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../actions/dismiss_reviews.html">dismiss_reviews</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../actions/label.html">label</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../actions/merge.html">merge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../actions/post_check.html">post_check</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../actions/queue.html">queue</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../actions/rebase.html">rebase</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../actions/request_reviews.html">request_reviews</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../actions/review.html">review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../actions/update.html">update</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">🚀 Actions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="assign.html">assign</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backport.html">backport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="close.html">close</a></li>
+<li class="toctree-l2"><a class="reference internal" href="copy.html">copy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comment.html">comment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="delete_head_branch.html">delete_head_branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dismiss_reviews.html">dismiss_reviews</a></li>
+<li class="toctree-l2"><a class="reference internal" href="label.html">label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merge.html">merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="post_check.html">post_check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queue.html">queue</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">rebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="request_reviews.html">request_reviews</a></li>
+<li class="toctree-l2"><a class="reference internal" href="review.html">review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update.html">update</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../commands.html">⚙️ Commands</a><ul>
@@ -185,107 +200,46 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="bots">
-<h1>🤖 Bots<a class="headerlink" href="#bots" title="Permalink to this headline"> 🔗</a></h1>
-<p>Some pull requests might be created automatically by other tools, such as the
-ones sending automatic dependencies update. You might decide that there’s no
-need to manually review and approve those pull request as long as your
-continuous integration system validates them.</p>
-<p>The rules below are examples for such services: they are designed to
-automatically merge those updates without human intervention if the continuous
-integration system validates them. <code class="docutils literal notranslate"><span class="pre">Travis</span> <span class="pre">CI</span> <span class="pre">-</span> <span class="pre">Pull</span> <span class="pre">Request</span></code> is used as the
-CI check name here — adjust it to whatever you use.</p>
-<div class="section" id="dependabot">
-<h2>Dependabot<a class="headerlink" href="#dependabot" title="Permalink to this headline"> 🔗</a></h2>
-<p><a class="reference external" href="https://dependabot.io">Dependabot</a> sends automatic updates for your
-project’s dependencies.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for Dependabot pull requests</span>
-    <span class="nt">conditions</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">author~=^dependabot(|-preview)\[bot\]$</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">check-success=Travis CI - Pull Request</span>
-    <span class="nt">actions</span><span class="p">:</span>
-      <span class="nt">merge</span><span class="p">:</span>
-        <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
-</pre></div>
+  <div class="section" id="rebase">
+<span id="rebase-action"></span><h1>rebase<a class="headerlink" href="#rebase" title="Permalink to this headline"> 🔗</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">rebase</span></code> action will rebase the pull request against its base branch.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key Name</p></th>
+<th class="head"><p>Value Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Value Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bot_account</span></code></p></td>
+<td><p><a class="reference internal" href="../configuration.html#data-type-template"><span class="std std-ref">Template</span></a></p></td>
+<td></td>
+<td><p>For certain actions, such as rebasing branches, Mergify has to
+impersonate a GitHub user. You can specify the account to use with this
+option. If no <code class="docutils literal notranslate"><span class="pre">bot_account</span></code> is set, Mergify picks randomly one of the
+organization users instead. The user account <strong>must</strong> have already been
+logged in Mergify dashboard once.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be aware that rebasing force-pushes the pull request head branch: any change
+done to that branch while Mergify is rebasing will be lost.</p>
 </div>
-</div>
-<div class="section" id="snyk">
-<h2>Snyk<a class="headerlink" href="#snyk" title="Permalink to this headline"> 🔗</a></h2>
-<p><a class="reference external" href="https://snyk.io">Snyk</a> sends automatic updates for your
-project’s dependencies.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for Snyk pull requests</span>
-    <span class="nt">conditions</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">title~=^\[Snyk\]</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">head~=^snyk-fix</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">check-success~=^security/snyk</span>
-    <span class="nt">actions</span><span class="p">:</span>
-      <span class="nt">merge</span><span class="p">:</span>
-        <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="renovate">
-<h2>Renovate<a class="headerlink" href="#renovate" title="Permalink to this headline"> 🔗</a></h2>
-<p><a class="reference external" href="https://renovatebot.com/">Renovate</a> sends automatic updates for your
-project’s dependencies.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for Renovate pull requests</span>
-    <span class="nt">conditions</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">author=renovate[bot]</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">check-success=Travis CI - Pull Request</span>
-    <span class="nt">actions</span><span class="p">:</span>
-      <span class="nt">merge</span><span class="p">:</span>
-        <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="requires-io">
-<h2>Requires.io<a class="headerlink" href="#requires-io" title="Permalink to this headline"> 🔗</a></h2>
-<p><a class="reference external" href="https://requires.io/">Requires.io</a> sends automatic updates for your
-project’s dependencies (only Python’s packages).</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for Requires.io pull requests</span>
-    <span class="nt">conditions</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">title~=^\[requires.io\]</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">head~=^requires-io</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">check-success=Travis CI - Pull Request</span>
-    <span class="nt">actions</span><span class="p">:</span>
-      <span class="nt">merge</span><span class="p">:</span>
-        <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="pyup">
-<h2>PyUp<a class="headerlink" href="#pyup" title="Permalink to this headline"> 🔗</a></h2>
-<p><a class="reference external" href="https://pyup.io/">PyUp</a> sends automatic updates for your project’s
-Python dependencies.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for PyUp pull requests</span>
-    <span class="nt">conditions</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">author=pyup-bot</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">check-success=Travis CI - Pull Request</span>
-    <span class="nt">actions</span><span class="p">:</span>
-      <span class="nt">merge</span><span class="p">:</span>
-        <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="imgbot">
-<h2>ImgBot<a class="headerlink" href="#imgbot" title="Permalink to this headline"> 🔗</a></h2>
-<p><a class="reference external" href="https://github.com/marketplace/imgbot">ImgBot</a> optimizes your images and
-saves you time.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for ImgBot pull requests</span>
-    <span class="nt">conditions</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">author=imgbot[bot]</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">check-success=Travis CI - Pull Request</span>
-    <span class="nt">actions</span><span class="p">:</span>
-      <span class="nt">merge</span><span class="p">:</span>
-        <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
-</pre></div>
-</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If the repository is bigger than 512 MB, the <code class="docutils literal notranslate"><span class="pre">rebase</span></code> action is only
+available for <a class="reference external" href="https://mergify.io/pricing">Essential and Premium  Plan subscribers</a>.
+<div style="text-align: right"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-success">Essential Plan feature 💪</span></a></div>
+<div style="text-align: right"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan feature 🦾</span></a></div></p>
 </div>
 </div>
 
@@ -303,7 +257,7 @@ saves you time.</p>
         <div>&copy; Copyright 2021, Mergify</div>
     </div>
     <div>
-      <a href="https://github.com/Mergifyio/mergify-engine/tree/master/docs/source/examples/bots.rst"
+      <a href="https://github.com/Mergifyio/mergify-engine/tree/master/docs/source/actions/rebase.rst"
          class="btn btn-dark btn-sm active">
         Edit on GitHub <i class="fas fa-external-link-square-alt"></i>
       </a>

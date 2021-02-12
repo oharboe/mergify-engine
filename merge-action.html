@@ -116,22 +116,22 @@
 <li class="toctree-l2"><a class="reference internal" href="conditions.html#about-status-checks">About Status Checks</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="actions.html">🚀 Actions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="actions.html#assign">assign</a></li>
-<li class="toctree-l2"><a class="reference internal" href="actions.html#backport">backport</a></li>
-<li class="toctree-l2"><a class="reference internal" href="actions.html#copy">copy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="actions.html#comment">comment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="actions.html#review">review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="actions.html#close">close</a></li>
-<li class="toctree-l2"><a class="reference internal" href="actions.html#delete-head-branch">delete_head_branch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="actions.html#dismiss-reviews">dismiss_reviews</a></li>
-<li class="toctree-l2"><a class="reference internal" href="actions.html#label">label</a></li>
-<li class="toctree-l2"><a class="reference internal" href="actions.html#merge">merge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="actions.html#queue">queue</a></li>
-<li class="toctree-l2"><a class="reference internal" href="actions.html#request-reviews">request_reviews</a></li>
-<li class="toctree-l2"><a class="reference internal" href="actions.html#rebase">rebase</a></li>
-<li class="toctree-l2"><a class="reference internal" href="actions.html#update">update</a></li>
-<li class="toctree-l2"><a class="reference internal" href="actions.html#post-check">post_check</a></li>
+<li class="toctree-l1"><a class="reference internal" href="actions/index.html">🚀 Actions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="actions/assign.html">assign</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions/backport.html">backport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions/close.html">close</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions/copy.html">copy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions/comment.html">comment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions/delete_head_branch.html">delete_head_branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions/dismiss_reviews.html">dismiss_reviews</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions/label.html">label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions/merge.html">merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions/post_check.html">post_check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions/queue.html">queue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions/rebase.html">rebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions/request_reviews.html">request_reviews</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions/review.html">review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions/update.html">update</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="commands.html">⚙️ Commands</a><ul>
@@ -196,7 +196,7 @@
   <div class="section" id="delving-into-the-merge-action">
 <span id="mastering-merge"></span><h1>🔀 Delving into the Merge Action<a class="headerlink" href="#delving-into-the-merge-action" title="Permalink to this headline"> 🔗</a></h1>
 <p>Mergify comes with some powerful options when it comes to merging your pull
-requests. While all the options are listed in the <a class="reference internal" href="actions.html#merge-action"><span class="std std-ref">merge</span></a> action
+requests. While all the options are listed in the <a class="reference internal" href="actions/merge.html#merge-action"><span class="std std-ref">merge</span></a> action
 documentation, some of the combinations are detailed here.</p>
 <div class="section" id="strict-merge">
 <span id="id1"></span><h2>Strict Merge<a class="headerlink" href="#strict-merge" title="Permalink to this headline"> 🔗</a></h2>
@@ -261,7 +261,7 @@ be merged by the engine, e.g., when all the <cite>conditions</cite> are validate
 <div class="section" id="enabling-the-strict-option">
 <h3>Enabling the Strict Option<a class="headerlink" href="#enabling-the-strict-option" title="Permalink to this headline"> 🔗</a></h3>
 <p>To enable <cite>strict merge</cite>, you need to set the value of <code class="docutils literal notranslate"><span class="pre">strict</span></code> to <code class="docutils literal notranslate"><span class="pre">true</span></code>
-in the <a class="reference internal" href="actions.html#merge-action"><span class="std std-ref">merge</span></a> action. For example:</p>
+in the <a class="reference internal" href="actions/merge.html#merge-action"><span class="std std-ref">merge</span></a> action. For example:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge with strict</span>
     <span class="nt">conditions</span><span class="p">:</span>
