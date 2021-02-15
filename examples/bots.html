@@ -196,8 +196,11 @@ integration system validates them. <code class="docutils literal notranslate"><s
 CI check name here — adjust it to whatever you use.</p>
 <div class="section" id="dependabot">
 <h2>Dependabot<a class="headerlink" href="#dependabot" title="Permalink to this headline"> 🔗</a></h2>
-<p><a class="reference external" href="https://dependabot.io">Dependabot</a> sends automatic updates for your
-project’s dependencies.</p>
+<p><a class="reference external" href="https://github.com/features/security">Dependabot</a> is the bot behind GitHub
+automatica security update. It sends automatic updates for your project’s
+dependencies, making sure they are secure.</p>
+<p>You can automate the merge of pull request created by <cite>dependabot</cite> with a rule
+such as:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for Dependabot pull requests</span>
     <span class="nt">conditions</span><span class="p">:</span>
@@ -208,6 +211,22 @@ project’s dependencies.</p>
         <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
 </pre></div>
 </div>
+<p>Alternatively, you can also enable the automatic merge for <cite>dependabot</cite> pull
+request only if they are for the same major version.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for Dependabot pull requests</span>
+    <span class="nt">conditions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">author~=^dependabot(|-preview)\[bot\]$</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">check-success=Travis CI - Pull Request</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">title~=^Bump [^\s]+ from ([\d]+)\..+ to \1\.</span>
+    <span class="nt">actions</span><span class="p">:</span>
+      <span class="nt">merge</span><span class="p">:</span>
+        <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
+</pre></div>
+</div>
+<p>The additional <cite>title</cite> based rule in <code class="docutils literal notranslate"><span class="pre">conditions</span></code> make sure that only the
+updates from <cite>1.x</cite> to <cite>1.y</cite> will be automatically merged. Updates from, e.g.,
+<cite>2.x</cite> to <cite>3.x</cite> will be ignored by Mergify.</p>
 </div>
 <div class="section" id="snyk">
 <h2>Snyk<a class="headerlink" href="#snyk" title="Permalink to this headline"> 🔗</a></h2>
