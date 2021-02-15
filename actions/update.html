@@ -176,7 +176,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#flexible-reviewers-assignment">👀 Flexible Reviewers Assignment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#running-ci-pipelines-automatically">💬 Running CI pipelines automatically</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#enforcing-pull-request-guidelines">📜 Enforcing Pull Request Guidelines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../examples.html#updating-pr-for-linear-history">🐍 Updating PR for linear history</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#bots">🤖 Bots</a></li>
 </ul>
 </li>
@@ -202,10 +201,37 @@
             
   <div class="section" id="update">
 <span id="update-action"></span><h1>update<a class="headerlink" href="#update" title="Permalink to this headline"> 🔗</a></h1>
-<p>The <code class="docutils literal notranslate"><span class="pre">update</span></code> action updates the pull request against its base branch.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">update</span></code> action updates the pull request against its base branch. It
+works by merging the base branch into the head branch of the pull request.</p>
+<img alt="../_images/update-branch.png" src="../_images/update-branch.png" />
+<p>This action does not have any configuration option, therefore it takes an empty
+dictionary as configuration (<code class="docutils literal notranslate"><span class="pre">{}</span></code> in YAML).</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">actions</span><span class="p">:</span>
   <span class="nt">update</span><span class="p">:</span> <span class="p p-Indicator">{}</span>
 </pre></div>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"> 🔗</a></h2>
+<div class="section" id="linear-history">
+<span id="example-linear-history"></span><h3>↑ Linear History<a class="headerlink" href="#linear-history" title="Permalink to this headline"> 🔗</a></h3>
+<p>As GitHub supports linear history in pull request settings, it is very handy to
+use a rule to keep your pull requests up-to-date. As you do not want to trigger
+your CI too often by always re-running it on every pull request — especially
+when there is still work in progress — you can limit this action to labeled
+pull requests.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic update for PR marked as “Ready-to-Go“</span>
+    <span class="nt">conditions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-conflict</span> <span class="c1"># skip PRs with conflicts</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-draft</span> <span class="c1"># filter-out GH draft PRs</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">label=&quot;Ready-to-Go&quot;</span>
+    <span class="nt">actions</span><span class="p">:</span>
+      <span class="nt">update</span><span class="p">:</span> <span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+<p>When a pull request is not in conflict nor draft, and has the label
+<code class="docutils literal notranslate"><span class="pre">Ready-to-Go</span></code>, it will be automatically updated with its base branch.</p>
+</div>
 </div>
 </div>
 
