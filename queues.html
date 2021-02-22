@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/mergify.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
 
   
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -40,7 +41,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="🧪 Example Rules" href="examples.html" />
-    <link rel="prev" title="🔀 Delving into the Merge Action" href="merge-action.html" /> 
+    <link rel="prev" title="⚙️ Commands" href="commands.html" /> 
   </head><body>
 <div class="body-container">
   <nav class="navbar navbar-expand-md sticky-top navbar-light bg-white flex-wrap">
@@ -81,8 +82,8 @@
   </ol>
   <div>
     <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-      <a href="merge-action.html" title="Previous Chapter: 🔀 Delving into the Merge Action" class="btn btn-primary" role="button" accesskey="P">
-        &laquo; 🔀 Delving int...
+      <a href="commands.html" title="Previous Chapter: ⚙️ Commands" class="btn btn-primary" role="button" accesskey="P">
+        &laquo; ⚙️ Commands
       </a>
       <a href="examples.html" title="Next Chapter: 🧪 Example Rules" class="btn btn-primary" role="button" accesskey="N">
         🧪 Example Rules &raquo;
@@ -141,11 +142,6 @@
 <li class="toctree-l2"><a class="reference internal" href="commands.html#refresh">refresh</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="merge-action.html">🔀 Delving into the Merge Action</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="merge-action.html#strict-merge">Strict Merge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="merge-action.html#git-merge-workflow-and-mergify-equivalent-configuration">Git merge workflow and Mergify equivalent configuration</a></li>
-</ul>
-</li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">🔀 Merge Queues</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#the-merge-train">The Merge Train</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#configuring-the-merge-queues">Configuring the Merge Queues</a></li>
@@ -196,7 +192,7 @@
 <span id="id1"></span><h1>🔀 Merge Queues<a class="headerlink" href="#merge-queues" title="Permalink to this headline"> 🔗</a></h1>
 <p><div style="text-align: right"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan feature 🦾</span></a></div>
 <div style="text-align: right"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-info">Beta feature ⚙️</span></a></div></p>
-<p>Merge queues prevent merging broken pull requests by serializing their merge. They work like <a class="reference internal" href="merge-action.html#strict-merge"><span class="std std-ref">Strict Merge</span></a>,
+<p>Merge queues prevent merging broken pull requests by serializing their merge. They work like <a class="reference internal" href="actions/merge.html#strict-merge"><span class="std std-ref">Strict Merge</span></a>,
 but also provides some delightful enhancements, like:</p>
 <ul class="simple">
 <li><p>faster pull requests merging when multiple pull requests are ready to merge</p></li>

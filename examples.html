@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/mergify.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
 
   
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -141,11 +142,6 @@
 <li class="toctree-l2"><a class="reference internal" href="commands.html#update">update</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands.html#backport">backport</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands.html#refresh">refresh</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="merge-action.html">🔀 Delving into the Merge Action</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="merge-action.html#strict-merge">Strict Merge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="merge-action.html#git-merge-workflow-and-mergify-equivalent-configuration">Git merge workflow and Mergify equivalent configuration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="queues.html">🔀 Merge Queues</a><ul>
@@ -447,7 +443,7 @@ passing.</p>
 <div class="section" id="using-labels-to-prioritize-merge">
 <h2><a class="toc-backref" href="#id15">⚡️ Using Labels to Prioritize Merge</a><a class="headerlink" href="#using-labels-to-prioritize-merge" title="Permalink to this headline"> 🔗</a></h2>
 <p><div style="text-align: right"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan feature 🦾</span></a></div></p>
-<p>When <code class="docutils literal notranslate"><span class="pre">smart</span></code> <a class="reference internal" href="merge-action.html#strict-merge"><span class="std std-ref">Strict Merge</span></a> is enabled and many pull requests are
+<p>When <code class="docutils literal notranslate"><span class="pre">smart</span></code> <a class="reference internal" href="actions/merge.html#strict-merge"><span class="std std-ref">Strict Merge</span></a> is enabled and many pull requests are
 waiting to be merged, some of them might be more urgent. In that case, you
 could add a condition using a <a class="reference external" href="https://help.github.com/articles/labeling-issues-and-pull-requests/">label</a> and
 configure the priority option of <a class="reference internal" href="actions/merge.html#merge-action"><span class="std std-ref">merge</span></a>:</p>
