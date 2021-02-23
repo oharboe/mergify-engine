@@ -365,18 +365,18 @@ passing correctly.</p></li>
 <li><p>A pull request is created, which also passes the CI.</p></li>
 </ul>
 <p>The state of the repository can be represented like this:</p>
-<div class="graphviz"><img src="../_images/graphviz-3529e97bf0fcc0bf7a47ad35553fe1e0d5378cc1.png" alt="Pull request is open" class="graphviz" /></div>
+<div class="graphviz"><img src="../_images/graphviz-20c254f277a5fca0c4621accb3077e388cda7552.png" alt="Pull request is open" class="graphviz" /></div>
 <p>While the pull request is open, another commit is pushed to <code class="docutils literal notranslate"><span class="pre">main</span></code> — let’s
 call it <cite>new commit</cite>. That can be a local commit or a merge commit from another
 pull request; who knows. The tests are run against <code class="docutils literal notranslate"><span class="pre">main</span></code> by the CI and
 they pass. The state of the repository and its continuous integration system
 can be described like this:</p>
-<div class="graphviz"><img src="../_images/graphviz-a8df7c3062c12ef33cd5cab67ddf1e471db63b2e.png" alt="Base branch adds a new commit" class="graphviz" /></div>
+<div class="graphviz"><img src="../_images/graphviz-dd1cac671ba7c031db49e285774ce26a27130b51.png" alt="Base branch adds a new commit" class="graphviz" /></div>
 <p>The pull request is still marked as valid by the continuous integration system
 since it did not change. As there is no code conflicts, the pull request is
 considered as <cite>mergeable</cite> by GitHub: the merge button is green.</p>
 <p>If you click that merge button, this is what <cite>might</cite> happen:</p>
-<div class="graphviz"><img src="../_images/graphviz-b09acd6bad11d408d168f8e8231970f5da4c6e4f.png" alt="Base branch is broken" class="graphviz" /></div>
+<div class="graphviz"><img src="../_images/graphviz-c1a0a74e074d94e94523744f2975be85185f959a.png" alt="Base branch is broken" class="graphviz" /></div>
 <p>As a new merge commit is created to merge the pull request, it is possible that
 the continuous integration testing fails. Indeed, the continuous integration
 did not test the pull request with the <cite>new commit</cite> that has been added to the
@@ -395,7 +395,7 @@ continuous integration system to test again the pull request with the new code.<
 have merged <code class="docutils literal notranslate"><span class="pre">main</span></code> in the base branch automatically. The continuous
 integration system would have run again and marked the pull request as failing
 the test, removing it from the mergeable candidate.</p>
-<div class="graphviz"><img src="../_images/graphviz-76d29b5f8db5adcd56582707d740458dd5c7a5c0.png" alt="Rebase make CI fails" class="graphviz" /></div>
+<div class="graphviz"><img src="../_images/graphviz-33fdcb9e111a959d9325594307ec228362cf1e58.png" alt="Rebase make CI fails" class="graphviz" /></div>
 <p>When the <code class="docutils literal notranslate"><span class="pre">strict</span></code> option is enabled, Mergify takes care of merging the target
 branch in any pull request that is not up-to-date with its target branch. If
 multiple pull requests are mergeable, they are scheduled to be merged
