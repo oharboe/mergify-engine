@@ -149,13 +149,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../commands.html#refresh">refresh</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../queues.html">🔀 Merge Queues</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../queues.html#the-merge-train">The Merge Train</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../queues.html#configuring-the-merge-queues">Configuring the Merge Queues</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../queues.html#example">Example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../queues.html#queue-rule-parameters">Queue Rule Parameters</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">🧪 Example Rules</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#automatic-merge-when-ci-works-and-approving-reviews">✅ Automatic Merge when CI works and approving reviews</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#using-regular-expressions">🌀 Using Regular Expressions</a></li>
@@ -365,18 +358,18 @@ passing correctly.</p></li>
 <li><p>A pull request is created, which also passes the CI.</p></li>
 </ul>
 <p>The state of the repository can be represented like this:</p>
-<div class="graphviz"><img src="../_images/graphviz-20c254f277a5fca0c4621accb3077e388cda7552.png" alt="Pull request is open" class="graphviz" /></div>
+<div class="graphviz"><img src="../_images/graphviz-6e116aa9eef88399620c0c6655daee0a71d84786.png" alt="Pull request is open" class="graphviz" /></div>
 <p>While the pull request is open, another commit is pushed to <code class="docutils literal notranslate"><span class="pre">main</span></code> — let’s
 call it <cite>new commit</cite>. That can be a local commit or a merge commit from another
 pull request; who knows. The tests are run against <code class="docutils literal notranslate"><span class="pre">main</span></code> by the CI and
 they pass. The state of the repository and its continuous integration system
 can be described like this:</p>
-<div class="graphviz"><img src="../_images/graphviz-dd1cac671ba7c031db49e285774ce26a27130b51.png" alt="Base branch adds a new commit" class="graphviz" /></div>
+<div class="graphviz"><img src="../_images/graphviz-beb8a4238f9dff13317bc57884133b389c26e3a3.png" alt="Base branch adds a new commit" class="graphviz" /></div>
 <p>The pull request is still marked as valid by the continuous integration system
 since it did not change. As there is no code conflicts, the pull request is
 considered as <cite>mergeable</cite> by GitHub: the merge button is green.</p>
 <p>If you click that merge button, this is what <cite>might</cite> happen:</p>
-<div class="graphviz"><img src="../_images/graphviz-c1a0a74e074d94e94523744f2975be85185f959a.png" alt="Base branch is broken" class="graphviz" /></div>
+<div class="graphviz"><img src="../_images/graphviz-f805585912392322ec76693f50cdb4009285de97.png" alt="Base branch is broken" class="graphviz" /></div>
 <p>As a new merge commit is created to merge the pull request, it is possible that
 the continuous integration testing fails. Indeed, the continuous integration
 did not test the pull request with the <cite>new commit</cite> that has been added to the
@@ -395,7 +388,7 @@ continuous integration system to test again the pull request with the new code.<
 have merged <code class="docutils literal notranslate"><span class="pre">main</span></code> in the base branch automatically. The continuous
 integration system would have run again and marked the pull request as failing
 the test, removing it from the mergeable candidate.</p>
-<div class="graphviz"><img src="../_images/graphviz-896f07fa1cd5568744a0fac2155ed036002673ac.png" alt="Rebase make CI fails" class="graphviz" /></div>
+<div class="graphviz"><img src="../_images/graphviz-ec7a033feb35633bc8c318fe1c001761fc0f6fae.png" alt="Rebase make CI fails" class="graphviz" /></div>
 <p>When the <code class="docutils literal notranslate"><span class="pre">strict</span></code> option is enabled, Mergify takes care of merging the target
 branch in any pull request that is not up-to-date with its target branch. If
 multiple pull requests are mergeable, they are scheduled to be merged
@@ -419,10 +412,10 @@ in the <a class="reference internal" href="#merge-action"><span class="std std-r
 </pre></div>
 </div>
 </div>
-<div class="section" id="more-advanced-queueing-option">
-<h3>More Advanced Queueing Option<a class="headerlink" href="#more-advanced-queueing-option" title="Permalink to this headline"> 🔗</a></h3>
+<div class="section" id="advanced-queueing-option">
+<h3>Advanced Queueing Option<a class="headerlink" href="#advanced-queueing-option" title="Permalink to this headline"> 🔗</a></h3>
 <p>While <cite>strict merge</cite> solves most issues, the <a class="reference external" href="queueaction">queue action</a> and
-<a class="reference internal" href="../queues.html#merge-queues"><span class="std std-ref">🔀 Merge Queues</span></a> provide a more powerful action to have total control of the
+<a class="reference internal" href="queue.html#queue-rules"><span class="std std-ref">Queue Rules</span></a> provide a more powerful action to have total control of the
 merge queue.</p>
 </div>
 <div class="section" id="viewing-the-merge-queue">
