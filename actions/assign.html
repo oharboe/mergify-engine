@@ -217,6 +217,22 @@
 </table>
 <p>The list of users in <code class="docutils literal notranslate"><span class="pre">add_users</span></code> or <code class="docutils literal notranslate"><span class="pre">remove_users</span></code> is based on <a class="reference internal" href="../configuration.html#data-type-template"><span class="std std-ref">Template</span></a>, you can use
 e.g. <code class="docutils literal notranslate"><span class="pre">{{author}}</span></code> to assign the pull request to its author.</p>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline"> 🔗</a></h2>
+<p>You can assign people for review based on any criteria you like. A classic is
+to use the name of modified files to do it:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">assign PRs with Python files modified to jd</span>
+    <span class="nt">conditions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">files~=\.py$</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-closed</span>
+    <span class="nt">actions</span><span class="p">:</span>
+      <span class="nt">assign</span><span class="p">:</span>
+        <span class="nt">add_users</span><span class="p">:</span>
+          <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">jd</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
