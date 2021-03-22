@@ -265,7 +265,7 @@ order they are defined in the configuration. Queue processing is blocked until
 all preceding queues, or higher priorities queues are empty.</p>
 </div>
 <div class="section" id="speculative-merges">
-<h2>Speculative Merges<a class="headerlink" href="#speculative-merges" title="Permalink to this headline"> 🔗</a></h2>
+<span id="id1"></span><h2>Speculative Merges<a class="headerlink" href="#speculative-merges" title="Permalink to this headline"> 🔗</a></h2>
 <p>Merging pull requests one by one serially can take a lot of time, depending on
 the continuous integration run time. To merge pull requests faster, Mergify
 queues support <cite>speculative merges</cite>.</p>
@@ -275,7 +275,8 @@ merge train consists of two or more pull requests embarked together to be
 tested speculatively.</p>
 <p>The upside of creating multiple temporary pull requests is that continuous
 integration pipelines can run on all of them in parallel. Currently, Mergify
-embarks up to 5 pull requests into the merge train.</p>
+embarks up to 5 pull requests into the merge train (You can change this value
+with the <code class="docutils literal notranslate"><span class="pre">speculative_checks</span></code> settings in <code class="docutils literal notranslate"><span class="pre">queue_rules</span></code>).</p>
 <div class="graphviz"><img src="../_images/graphviz-778c7bc579a1248df647b483c60ac1a33070521e.png" alt="Merge train" class="graphviz" /></div>
 <p>In the above example, three pull requests are tested at the same time by the
 continuous integration system: <code class="docutils literal notranslate"><span class="pre">PR</span> <span class="pre">#1</span></code>, <code class="docutils literal notranslate"><span class="pre">PR</span> <span class="pre">#1</span> <span class="pre">+</span> <span class="pre">PR</span> <span class="pre">#2</span></code> and <code class="docutils literal notranslate"><span class="pre">PR</span> <span class="pre">#1</span> <span class="pre">+</span> <span class="pre">PR</span> <span class="pre">#2</span>
@@ -298,8 +299,8 @@ disembarked and re-embarked.</p>
 </div>
 <div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline"> 🔗</a></h2>
-<div class="section" id="id1">
-<h3>Queue Action<a class="headerlink" href="#id1" title="Permalink to this headline"> 🔗</a></h3>
+<div class="section" id="id2">
+<h3>Queue Action<a class="headerlink" href="#id2" title="Permalink to this headline"> 🔗</a></h3>
 <p>These are the options of the <code class="docutils literal notranslate"><span class="pre">queue</span></code> action:</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -368,7 +369,7 @@ end of the title.</p></li>
 </table>
 </div>
 <div class="section" id="queue-rules">
-<span id="id2"></span><h3>Queue Rules<a class="headerlink" href="#queue-rules" title="Permalink to this headline"> 🔗</a></h3>
+<span id="id3"></span><h3>Queue Rules<a class="headerlink" href="#queue-rules" title="Permalink to this headline"> 🔗</a></h3>
 <p>A <code class="docutils literal notranslate"><span class="pre">queue_rules</span></code> takes the following parameter:</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -394,6 +395,13 @@ end of the title.</p></li>
 <td><p>list of <code class="docutils literal notranslate"><span class="pre">conditions</span></code></p></td>
 <td></td>
 <td><p>The list of <code class="docutils literal notranslate"><span class="pre">conditions</span></code> to match to get the queued pull request merged.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">speculative_checks</span></code></p></td>
+<td><p>int</p></td>
+<td><p>5</p></td>
+<td><p>The maximum number of checks to run in parallel in the queue. Must be
+between 1 and 20.
+See <a class="reference internal" href="#speculative-merges"><span class="std std-ref">Speculative Merges</span></a>.</p></td>
 </tr>
 </tbody>
 </table>
