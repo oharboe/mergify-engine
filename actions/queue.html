@@ -332,7 +332,8 @@ disembarked and re-embarked.</p>
 <td><p><code class="docutils literal notranslate"><span class="pre">merge</span></code></p></td>
 <td><p>If <code class="docutils literal notranslate"><span class="pre">method</span></code> is set to <code class="docutils literal notranslate"><span class="pre">rebase</span></code>, but the pull request cannot be
 rebased, the method defined in <code class="docutils literal notranslate"><span class="pre">rebase_fallback</span></code> will be used instead.
-Possible values are <code class="docutils literal notranslate"><span class="pre">merge</span></code>, <code class="docutils literal notranslate"><span class="pre">squash</span></code>, <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p></td>
+Possible values are <code class="docutils literal notranslate"><span class="pre">merge</span></code>, <code class="docutils literal notranslate"><span class="pre">squash</span></code>, <code class="docutils literal notranslate"><span class="pre">none</span></code>. <code class="docutils literal notranslate"><span class="pre">none</span></code> will
+report an error if rebase is not possible.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">merge_bot_account</span></code></p></td>
 <td><p>string</p></td>
