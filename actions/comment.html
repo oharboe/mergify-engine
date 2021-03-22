@@ -160,10 +160,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#using-labels-to-prioritize-merge">⚡️ Using Labels to Prioritize Merge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#removing-stale-reviews">🥶 Removing Stale Reviews</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#require-all-requested-reviews-to-be-approved">🙅️ Require All Requested Reviews to Be Approved</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../examples.html#welcoming-your-contributors">💌 Welcoming your Contributors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../examples.html#request-for-action">🤜 Request for Action</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#flexible-reviewers-assignment">👀 Flexible Reviewers Assignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../examples.html#running-ci-pipelines-automatically">💬 Running CI pipelines automatically</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#enforcing-pull-request-guidelines">📜 Enforcing Pull Request Guidelines</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#bots">🤖 Bots</a></li>
 </ul>
@@ -190,7 +187,7 @@
             
   <div class="section" id="comment">
 <span id="comment-action"></span><h1>comment<a class="headerlink" href="#comment" title="Permalink to this headline"> 🔗</a></h1>
-<p>The <code class="docutils literal notranslate"><span class="pre">comment</span></code> action adds a comment to the pull request.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">comment</span></code> action posts a comment to the pull request.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 17%" />
@@ -222,6 +219,74 @@ itself.</p>
 </tr>
 </tbody>
 </table>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"> 🔗</a></h2>
+<div class="section" id="request-for-action">
+<h3>🤜 Request for Action<a class="headerlink" href="#request-for-action" title="Permalink to this headline"> 🔗</a></h3>
+<p>If any event that requires the author of the pull request to edit its pull
+request happen, you could write a rule that says something about it.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ask to resolve conflict</span>
+    <span class="nt">conditions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conflict</span>
+    <span class="nt">actions</span><span class="p">:</span>
+        <span class="nt">comment</span><span class="p">:</span>
+          <span class="nt">message</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">This pull request is now in conflicts. Could you fix it @{{author}}? 🙏</span>
+</pre></div>
+</div>
+<p>The same goes if one of your check fails. It might be good to give a few hints
+to your contributor:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ask to fix commit message</span>
+    <span class="nt">conditions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">check-failure=Semantic Pull Request</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-closed</span>
+    <span class="nt">actions</span><span class="p">:</span>
+        <span class="nt">comment</span><span class="p">:</span>
+          <span class="nt">message</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+            <span class="no">Title does not follow the guidelines of [Conventional Commits](https://www.conventionalcommits.org).</span>
+            <span class="no">Please adjust title before merge.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="welcoming-your-contributors">
+<h3>💌 Welcoming your Contributors<a class="headerlink" href="#welcoming-your-contributors" title="Permalink to this headline"> 🔗</a></h3>
+<p>When somebody that’s not part of your team creates a pull requests, it might be
+great to give him a few hints about what to expect next. You could write him a
+little message.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">say hi to contributors if they are not part of the regularcontributors team</span>
+    <span class="nt">conditions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">author!=@regularcontributors</span>
+    <span class="nt">actions</span><span class="p">:</span>
+        <span class="nt">comment</span><span class="p">:</span>
+          <span class="nt">message</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+              <span class="no">Welcome to our great project!</span>
+              <span class="no">We&#39;re delighted to have you onboard 💘</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-ci-pipelines-automatically">
+<h3>💬 Running CI pipelines automatically<a class="headerlink" href="#running-ci-pipelines-automatically" title="Permalink to this headline"> 🔗</a></h3>
+<p>Some continuous integration systems allow you to trigger jobs by commenting on
+the pull request. For example, Microsoft Azure allows that using
+the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/github?view=azure-devops&amp;tabs=yaml#comment-triggers">/AzurePipelines command</a>.
+You could automate this using Mergify, and for example trigger the job after
+other CI jobs have passed and at least one developer has reviewed the pull
+request.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">run Azure CI job once ready to merge</span>
+    <span class="nt">conditions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;#approved-reviews-by&gt;=1&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;check-success=ci/circleci:</span><span class="nv"> </span><span class="s">my_testing_job&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-closed</span>
+    <span class="nt">actions</span><span class="p">:</span>
+      <span class="nt">comments</span><span class="p">:</span>
+        <span class="nt">message</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/AzurePipelines run mypipeline</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 
 
