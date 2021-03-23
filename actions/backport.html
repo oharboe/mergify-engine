@@ -153,7 +153,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#automatic-merge-when-ci-works-and-approving-reviews">✅ Automatic Merge when CI works and approving reviews</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#using-regular-expressions">🌀 Using Regular Expressions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#merging-based-on-modified-files">🗂 Merging based on Modified Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../examples.html#using-labels-to-backport-pull-requests">👩‍🔧 Using Labels to Backport Pull-Requests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#deleting-merged-branch">✂️ Deleting Merged Branch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#less-strict-rules-for-stable-branches">🏖 Less Strict Rules for Stable Branches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#using-labels-to-enable-disable-merge">🎬 Using Labels to Enable/Disable Merge</a></li>
@@ -197,8 +196,19 @@ some of its bugs.</p>
 <p>As this process of backporting patches can be tedious, Mergify automates this
 mechanism to save developers’ time and ease their duty.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">backport</span></code> action copies the pull request into another branch <em>once the
-pull request has been merged</em>. The <code class="docutils literal notranslate"><span class="pre">backport</span></code> action takes the following
-parameter:</p>
+pull request has been merged</em>.</p>
+<p>Once the backporting pull request is closed or merged, Mergify will
+automatically delete the backport head branch that it created.</p>
+<p>You can also trigger backports using the <a class="reference internal" href="../commands.html#backport-command"><span class="std std-ref">backport</span></a> command.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If the repository is bigger than 512 MB, the <code class="docutils literal notranslate"><span class="pre">backport</span></code> action is only
+available for <a class="reference external" href="https://mergify.io/pricing">Essential and Premium subscribers</a>.
+<div style="text-align: right"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-success">Essential Plan feature 💪</span></a></div>
+<div style="text-align: right"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan feature 🦾</span></a></div></p>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline"> 🔗</a></h2>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 17%" />
@@ -239,14 +249,27 @@ cherry-picking the commits.</p></td>
 </tr>
 </tbody>
 </table>
-<p>Once the backporting pull request is closed or merged, Mergify will
-automatically delete the backport head branch that it created.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If the repository is bigger than 512 MB, the <code class="docutils literal notranslate"><span class="pre">backport</span></code> action is only
-available for <a class="reference external" href="https://mergify.io/pricing">Essential and Premium subscribers</a>.
-<div style="text-align: right"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-success">Essential Plan feature 💪</span></a></div>
-<div style="text-align: right"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan feature 🦾</span></a></div></p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"> 🔗</a></h2>
+<div class="section" id="using-labels-to-backport-pull-requests">
+<h3>👩‍🔧 Using Labels to Backport Pull-Requests<a class="headerlink" href="#using-labels-to-backport-pull-requests" title="Permalink to this headline"> 🔗</a></h3>
+<p>Copying pull requests to a maintenance branch is a common workflow. In order to
+elect a pull request to be backported, it’s possible to use a label. With a
+rule such as the one below, you can trigger a backport as soon as the label is
+added and the pull request merged:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">backport patches to stable branch</span>
+    <span class="nt">conditions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">base=master</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">label=backport-to-stable</span>
+    <span class="nt">actions</span><span class="p">:</span>
+      <span class="nt">backport</span><span class="p">:</span>
+        <span class="nt">branches</span><span class="p">:</span>
+          <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">stable</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
