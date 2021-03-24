@@ -186,6 +186,8 @@
   <div class="section" id="assign">
 <span id="assign-action"></span><h1>assign<a class="headerlink" href="#assign" title="Permalink to this headline"> 🔗</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">assign</span></code> action assigns users to the pull request.</p>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline"> 🔗</a></h2>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 17%" />
@@ -215,8 +217,11 @@
 </table>
 <p>The list of users in <code class="docutils literal notranslate"><span class="pre">add_users</span></code> or <code class="docutils literal notranslate"><span class="pre">remove_users</span></code> is based on <a class="reference internal" href="../configuration.html#data-type-template"><span class="std std-ref">Template</span></a>, you can use
 e.g. <code class="docutils literal notranslate"><span class="pre">{{author}}</span></code> to assign the pull request to its author.</p>
-<div class="section" id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline"> 🔗</a></h2>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"> 🔗</a></h2>
+<div class="section" id="flexible-assignment">
+<h3>👉 Flexible Assignment<a class="headerlink" href="#flexible-assignment" title="Permalink to this headline"> 🔗</a></h3>
 <p>You can assign people for review based on any criteria you like. A classic is
 to use the name of modified files to do it:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
@@ -229,6 +234,7 @@ to use the name of modified files to do it:</p>
         <span class="nt">add_users</span><span class="p">:</span>
           <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">jd</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
