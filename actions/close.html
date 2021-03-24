@@ -185,7 +185,9 @@
             
   <div class="section" id="close">
 <span id="close-action"></span><h1>close<a class="headerlink" href="#close" title="Permalink to this headline"> 🔗</a></h1>
-<p>The <code class="docutils literal notranslate"><span class="pre">close</span></code> action closes the pull request without merging it.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">close</span></code> action closes the pull request — without merging it.</p>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline"> 🔗</a></h2>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 17%" />
@@ -208,6 +210,23 @@
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"> 🔗</a></h2>
+<div class="section" id="automatically-close-pull-request-touching-a-file">
+<h3>❌ Automatically close pull request touching a file<a class="headerlink" href="#automatically-close-pull-request-touching-a-file" title="Permalink to this headline"> 🔗</a></h3>
+<p>If you wanted to automatically close pull request that touches a certain file,
+let’s say <code class="docutils literal notranslate"><span class="pre">do_not_touch.txt</span></code>, you could write a rule such as:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">disallow changing a file</span>
+    <span class="nt">conditions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">files=do_not_touch.txt</span>
+    <span class="nt">actions</span><span class="p">:</span>
+      <span class="nt">close</span><span class="p">:</span> <span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 
 
