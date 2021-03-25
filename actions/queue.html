@@ -184,7 +184,7 @@
             
   <div class="section" id="queue">
 <span id="queue-action"></span><h1>queue<a class="headerlink" href="#queue" title="Permalink to this headline"> 🔗</a></h1>
-<p><div style="text-align: right"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-info">Beta feature ⚙️</span></a></div></p>
+<p><div class="feature-tag"><span class="badge badge-info">Beta Feature ⚙️</span></div></p>
 <p>The <code class="docutils literal notranslate"><span class="pre">queue</span></code> action moves the pull request into one of the merge queue defined
 in <a class="reference internal" href="#queue-rules"><span class="std std-ref">Queue Rules</span></a>.</p>
 <p>Merge queues prevent merging broken pull requests by serializing their merge.
@@ -259,7 +259,7 @@ all preceding queues, or higher priorities queues are empty.</p>
 </div>
 <div class="section" id="speculative-merges">
 <span id="id1"></span><h2>Speculative Merges<a class="headerlink" href="#speculative-merges" title="Permalink to this headline"> 🔗</a></h2>
-<p><div style="text-align: right"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan feature 🦾</span></a></div></p>
+<p><div class="feature-tag"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan<br/>Feature 🦾</span></a></div></p>
 <p>Merging pull requests one by one serially can take a lot of time, depending on
 the continuous integration run time. To merge pull requests faster, Mergify
 queues support <cite>speculative merges</cite>.</p>
@@ -333,21 +333,18 @@ report an error if rebase is not possible.</p></td>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">merge_bot_account</span></code></p></td>
 <td><p>string</p></td>
 <td></td>
-<td><p>Mergify can impersonate a GitHub user to merge pull request.
+<td><p><div class="feature-tag"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan<br/>Feature 🦾</span></a></div>
+Mergify can impersonate a GitHub user to merge pull request.
 If no <code class="docutils literal notranslate"><span class="pre">merge_bot_account</span></code> is set, Mergify will merge the pull request
 itself. The user account <strong>must</strong> have already been
-logged in Mergify dashboard once and have <strong>write</strong> or <strong>maintain</strong> permission.</p>
-<p><div style="text-align: right"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan feature 🦾</span></a></div></p>
-</td>
+logged in Mergify dashboard once and have <strong>write</strong> or <strong>maintain</strong> permission.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">priority</span></code></p></td>
 <td><p>1 &lt;= integer &lt;= 10000 or <code class="docutils literal notranslate"><span class="pre">low</span></code> or <code class="docutils literal notranslate"><span class="pre">medium</span></code> or <code class="docutils literal notranslate"><span class="pre">high</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">medium</span></code></p></td>
-<td><p>This sets the priority of the pull request in the queue. The pull
+<td><p><div class="feature-tag"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan<br/>Feature 🦾</span></a></div> This sets the priority of the pull request in the queue. The pull
 request with the highest priority is merged first.
-<code class="docutils literal notranslate"><span class="pre">low</span></code>, <code class="docutils literal notranslate"><span class="pre">medium</span></code>, <code class="docutils literal notranslate"><span class="pre">high</span></code> are aliases for <code class="docutils literal notranslate"><span class="pre">1000</span></code>, <code class="docutils literal notranslate"><span class="pre">2000</span></code>, <code class="docutils literal notranslate"><span class="pre">3000</span></code>.</p>
-<p><div style="text-align: right"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan feature 🦾</span></a></div></p>
-</td>
+<code class="docutils literal notranslate"><span class="pre">low</span></code>, <code class="docutils literal notranslate"><span class="pre">medium</span></code>, <code class="docutils literal notranslate"><span class="pre">high</span></code> are aliases for <code class="docutils literal notranslate"><span class="pre">1000</span></code>, <code class="docutils literal notranslate"><span class="pre">2000</span></code>, <code class="docutils literal notranslate"><span class="pre">3000</span></code>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">commit_message</span></code></p></td>
 <td><p>string</p></td>
@@ -397,11 +394,9 @@ end of the title.</p></li>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">speculative_checks</span></code></p></td>
 <td><p>int</p></td>
 <td><p>1</p></td>
-<td><p>The maximum number of checks to run in parallel in the queue. Must be
+<td><p><div class="feature-tag"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan<br/>Feature 🦾</span></a></div> The maximum number of checks to run in parallel in the queue. Must be
 between 1 and 20.
-See <a class="reference internal" href="#speculative-merges"><span class="std std-ref">Speculative Merges</span></a>.</p>
-<p><div style="text-align: right"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan feature 🦾</span></a></div></p>
-</td>
+See <a class="reference internal" href="#speculative-merges"><span class="std std-ref">Speculative Merges</span></a>.</p></td>
 </tr>
 </tbody>
 </table>
