@@ -200,10 +200,10 @@ passing correctly.</p></li>
 </ul>
 <p>The state of the repository can be represented like this:</p>
 <div class="graphviz"><img src="../_images/graphviz-37a87eb05921955db02ff2d0a0dba469d3093d8e.png" alt="Pull request is open" class="graphviz" /></div>
-<p>While the pull request is open, another commit is pushed to <code class="docutils literal notranslate"><span class="pre">main`</span> <span class="pre">—</span> <span class="pre">let's</span>
-<span class="pre">call</span> <span class="pre">it</span> <span class="pre">`new</span> <span class="pre">commit`.</span> <span class="pre">That</span> <span class="pre">new</span> <span class="pre">commit</span> <span class="pre">can</span> <span class="pre">be</span> <span class="pre">pushed</span> <span class="pre">directely</span> <span class="pre">to</span> <span class="pre">``main</span></code> or
+<p>While the pull request is open, another commit is pushed to <code class="docutils literal notranslate"><span class="pre">main</span></code> — let’s
+call it <cite>new commit</cite>. That new commit can be pushed directly to <code class="docutils literal notranslate"><span class="pre">main</span></code> or
 merged from another pull request; it doesn’t matter.</p>
-<p>The tests are run against the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch by the CI and they pass. The
+<p>The tests are run against the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch by the CI, and they pass. The
 state of the repository and its continuous integration system can be now
 described like this:</p>
 <div class="graphviz"><img src="../_images/graphviz-6bd8fabbf22bdbb69c3e8706e61cdba1e00ed7f7.png" alt="Base branch adds a new commit" class="graphviz" /></div>
@@ -214,20 +214,20 @@ considered as <cite>mergeable</cite> by GitHub: the merge button is green.</p>
 <div class="graphviz"><img src="../_images/graphviz-b736a22e53b320a2fb33595e0175a1c454ea02ad.png" alt="Base branch is broken" class="graphviz" /></div>
 <p>As a new merge commit is created to merge the pull request, it is possible that
 the continuous integration testing fails. Indeed, the continuous integration
-did not test the pull request with the <cite>new commit</cite> that has been added to the
-base branch. Some new test might have been introduced by this <cite>new commit</cite> in
-the base branch while the pull request was open. That pull request may not have
-the correct code to pass this new test.</p>
+did not test the pull request with the <cite>new commit</cite> added to the base branch.
+This <cite>new commit</cite> might have introduced some new tests in the base branch while
+the pull request was open. That pull request may not have the correct code to
+pass this new test.</p>
 </div>
 <div class="section" id="using-queues">
 <h3>Using Queues<a class="headerlink" href="#using-queues" title="Permalink to this headline"> 🔗</a></h3>
 <p>Using a merge queue solves that issue by updating any pull request that is not
 up-to-date with its base branch before being merged. That forces the continuous
-integration system to test again the pull request with the new code from its
-base branch.</p>
-<p>In the previous example, if a merge queue was being used, Mergify would have
-merged <code class="docutils literal notranslate"><span class="pre">main</span></code> in the base branch automatically. The continuous integration
-system would have run again and marked the pull request as failing the test,
+integration system to retest the pull request with the new code from its base
+branch.</p>
+<p>If a merge queue were being used in the previous example, Mergify would
+automatically merge the <code class="docutils literal notranslate"><span class="pre">main</span></code> in the base branch. The continuous integration
+system would have rerun and marked the pull request as failing the test,
 removing it from the merge queue altogether.</p>
 <div class="graphviz"><img src="../_images/graphviz-0cad74332cfe55f291db6658049fea003df8a549.png" alt="Rebase make CI fails" class="graphviz" /></div>
 <p>When multiple pull requests are mergeable, they are scheduled to be merged
