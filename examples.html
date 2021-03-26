@@ -153,7 +153,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#using-labels-to-prioritize-merge">⚡️ Using Labels to Prioritize Merge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#require-all-requested-reviews-to-be-approved">🙅️ Require All Requested Reviews to Be Approved</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#flexible-reviewers-assignment">👀 Flexible Reviewers Assignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#enforcing-pull-request-guidelines">📜 Enforcing Pull Request Guidelines</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#bots">🤖 Bots</a></li>
 </ul>
 </li>
@@ -194,8 +193,7 @@ and cover many common use cases.</p>
 <li><p><a class="reference internal" href="#using-labels-to-prioritize-merge" id="id13">⚡️ Using Labels to Prioritize Merge</a></p></li>
 <li><p><a class="reference internal" href="#require-all-requested-reviews-to-be-approved" id="id14">🙅️ Require All Requested Reviews to Be Approved</a></p></li>
 <li><p><a class="reference internal" href="#flexible-reviewers-assignment" id="id15">👀 Flexible Reviewers Assignment</a></p></li>
-<li><p><a class="reference internal" href="#enforcing-pull-request-guidelines" id="id16">📜 Enforcing Pull Request Guidelines</a></p></li>
-<li><p><a class="reference internal" href="#bots" id="id17">🤖 Bots</a></p></li>
+<li><p><a class="reference internal" href="#bots" id="id16">🤖 Bots</a></p></li>
 </ul>
 </div>
 <div class="section" id="automatic-merge-when-ci-works-and-approving-reviews">
@@ -484,36 +482,8 @@ to use the name of modified files to do it:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="enforcing-pull-request-guidelines">
-<h2><a class="toc-backref" href="#id16">📜 Enforcing Pull Request Guidelines</a><a class="headerlink" href="#enforcing-pull-request-guidelines" title="Permalink to this headline"> 🔗</a></h2>
-<p><div class="feature-tag"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan<br/>Feature 🦾</span></a></div></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Guidelines</span>
-    <span class="nt">conditions</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;#title&lt;50&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;#body&lt;4096&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;#files&lt;100&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;body~=(?m)^(Fixes|Related|Closes)</span><span class="nv"> </span><span class="s">(MERGIFY-ENGINE|MRGFY)-&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-label=ignore-guidelines</span>
-    <span class="nt">actions</span><span class="p">:</span>
-      <span class="nt">post_check</span><span class="p">:</span>
-        <span class="nt">title</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pull request</span> <span class="c1">#{{ number }} does{% if not check_succeed %} not{% endif %} follow our guidelines</span>
-        <span class="nt">summary</span><span class="p">:</span> <span class="p p-Indicator">|</span>
-          <span class="no">My awesome pull request guidelines:</span>
-
-          <span class="no">* The tile must be at least 50 chars long</span>
-          <span class="no">* The body must be no longer than 4k chars</span>
-          <span class="no">* The PR can&#39;t modify more than 100 files</span>
-          <span class="no">* Please explain what you&#39;re trying to achieve by linking to an issue</span>
-
-          <span class="no">Conditions:</span>
-
-          <span class="no">{{ check_conditions }}</span>
-</pre></div>
-</div>
-</div>
 <div class="section" id="bots">
-<h2><a class="toc-backref" href="#id17">🤖 Bots</a><a class="headerlink" href="#bots" title="Permalink to this headline"> 🔗</a></h2>
+<h2><a class="toc-backref" href="#id16">🤖 Bots</a><a class="headerlink" href="#bots" title="Permalink to this headline"> 🔗</a></h2>
 <p>Some pull requests might be created automatically by other tools, such as the
 ones sending automatic dependencies update. You might decide that there’s no
 need to manually review and approve those pull request as long as your

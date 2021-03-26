@@ -158,7 +158,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#using-labels-to-prioritize-merge">⚡️ Using Labels to Prioritize Merge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#require-all-requested-reviews-to-be-approved">🙅️ Require All Requested Reviews to Be Approved</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#flexible-reviewers-assignment">👀 Flexible Reviewers Assignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../examples.html#enforcing-pull-request-guidelines">📜 Enforcing Pull Request Guidelines</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples.html#bots">🤖 Bots</a></li>
 </ul>
 </li>
@@ -188,6 +187,8 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">post_check</span></code> action adds an item in a pull request check list. The check
 status is <code class="docutils literal notranslate"><span class="pre">success</span></code> when all conditions match, otherwise, it is set to
 <code class="docutils literal notranslate"><span class="pre">failure</span></code>.</p>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline"> 🔗</a></h2>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -216,7 +217,7 @@ status is <code class="docutils literal notranslate"><span class="pre">success</
 </tbody>
 </table>
 <p>As the <code class="docutils literal notranslate"><span class="pre">title</span></code> and <code class="docutils literal notranslate"><span class="pre">summary</span></code> use on <a class="reference internal" href="../configuration.html#data-type-template"><span class="std std-ref">Template</span></a>, you can
-benefit from any pull request attributes e.g. <code class="docutils literal notranslate"><span class="pre">{{author}}</span></code> and also these
+benefit from any pull request attributes, e.g. <code class="docutils literal notranslate"><span class="pre">{{author}}</span></code>, and also these
 additional variables:</p>
 <blockquote>
 <div><ul class="simple">
@@ -225,6 +226,37 @@ additional variables:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">check_conditions</span> <span class="pre">}}</span></code> the list of all conditions with a checkbox marked if the condition match</p></li>
 </ul>
 </div></blockquote>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"> 🔗</a></h2>
+<div class="section" id="enforcing-conventional-commits">
+<h3>📜 Enforcing Conventional Commits<a class="headerlink" href="#enforcing-conventional-commits" title="Permalink to this headline"> 🔗</a></h3>
+<p>You might want to enforce some guidelines as how to write pull request title.
+The following rules add such a check, making sure your team follows
+<a class="reference external" href="https://www.conventionalcommits.org/">Conventional Commits</a>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Conventional Commit</span>
+    <span class="nt">conditions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;title~=^(fix|feat|docs|style|refactor|perf|test|build|ci|chore|revert)(?:\\(.+\\))?:&quot;</span>
+    <span class="nt">actions</span><span class="p">:</span>
+      <span class="nt">post_check</span><span class="p">:</span>
+        <span class="nt">title</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+          <span class="no">{% if check_succeed %}</span>
+          <span class="no">Title follows Conventional Commit</span>
+          <span class="no">{% else %}</span>
+          <span class="no">Title does not follow Conventional Commit</span>
+          <span class="no">{% endif %}</span>
+        <span class="nt">summary</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+          <span class="no">{% if not check_succeed %}</span>
+          <span class="no">Your pull request title must follow [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/).</span>
+          <span class="no">{% endif %}</span>
+</pre></div>
+</div>
+<p>The result of this check will be visible in GitHub user interface, near the
+merge button.</p>
+<img alt="../_images/post-check-actions.png" src="../_images/post-check-actions.png" />
+</div>
+</div>
 </div>
 
 
