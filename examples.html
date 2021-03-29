@@ -152,7 +152,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#using-labels-to-enable-disable-merge">🎬 Using Labels to Enable/Disable Merge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-labels-to-prioritize-merge">⚡️ Using Labels to Prioritize Merge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#require-all-requested-reviews-to-be-approved">🙅️ Require All Requested Reviews to Be Approved</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#flexible-reviewers-assignment">👀 Flexible Reviewers Assignment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#bots">🤖 Bots</a></li>
 </ul>
 </li>
@@ -192,8 +191,7 @@ and cover many common use cases.</p>
 <li><p><a class="reference internal" href="#using-labels-to-enable-disable-merge" id="id12">🎬 Using Labels to Enable/Disable Merge</a></p></li>
 <li><p><a class="reference internal" href="#using-labels-to-prioritize-merge" id="id13">⚡️ Using Labels to Prioritize Merge</a></p></li>
 <li><p><a class="reference internal" href="#require-all-requested-reviews-to-be-approved" id="id14">🙅️ Require All Requested Reviews to Be Approved</a></p></li>
-<li><p><a class="reference internal" href="#flexible-reviewers-assignment" id="id15">👀 Flexible Reviewers Assignment</a></p></li>
-<li><p><a class="reference internal" href="#bots" id="id16">🤖 Bots</a></p></li>
+<li><p><a class="reference internal" href="#bots" id="id15">🤖 Bots</a></p></li>
 </ul>
 </div>
 <div class="section" id="automatic-merge-when-ci-works-and-approving-reviews">
@@ -454,36 +452,8 @@ least one positive review, obviously.</p>
 <p>Note that if a requested review is dismissed, then it doesn’t count as a review
 that would prevent the merge.</p>
 </div>
-<div class="section" id="flexible-reviewers-assignment">
-<h2><a class="toc-backref" href="#id15">👀 Flexible Reviewers Assignment</a><a class="headerlink" href="#flexible-reviewers-assignment" title="Permalink to this headline"> 🔗</a></h2>
-<p>You can assign people for review based on any criteria you like. A classic is
-to use the name of modified files to do it:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ask jd to review changes on python files</span>
-    <span class="nt">conditions</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">files~=\.py$</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-closed</span>
-    <span class="nt">actions</span><span class="p">:</span>
-      <span class="nt">request_reviews</span><span class="p">:</span>
-        <span class="nt">users</span><span class="p">:</span>
-          <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">jd</span>
-</pre></div>
-</div>
-<p>You can also ask entire teams to review a pull request based on, e.g., labels:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ask the security team to review security labelled PR</span>
-    <span class="nt">conditions</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">label=security</span>
-    <span class="nt">actions</span><span class="p">:</span>
-      <span class="nt">request_reviews</span><span class="p">:</span>
-        <span class="nt">teams</span><span class="p">:</span>
-          <span class="p p-Indicator">-</span> <span class="s">&quot;@myorg/security-dev&quot;</span>
-          <span class="p p-Indicator">-</span> <span class="s">&quot;@myorg/security-ops&quot;</span>
-</pre></div>
-</div>
-</div>
 <div class="section" id="bots">
-<h2><a class="toc-backref" href="#id16">🤖 Bots</a><a class="headerlink" href="#bots" title="Permalink to this headline"> 🔗</a></h2>
+<h2><a class="toc-backref" href="#id15">🤖 Bots</a><a class="headerlink" href="#bots" title="Permalink to this headline"> 🔗</a></h2>
 <p>Some pull requests might be created automatically by other tools, such as the
 ones sending automatic dependencies update. You might decide that there’s no
 need to manually review and approve those pull request as long as your
