@@ -183,7 +183,23 @@
             
   <div class="section" id="rebase">
 <span id="rebase-action"></span><h1>rebase<a class="headerlink" href="#rebase" title="Permalink to this headline"> 🔗</a></h1>
-<p>The <code class="docutils literal notranslate"><span class="pre">rebase</span></code> action will rebase the pull request against its base branch.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">rebase</span></code> action will rebase the pull request against its base branch. To
+this effect, it clones the branch, run <cite>git rebase</cite> locally and push back the
+result to the GitHub repository.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be aware that rebasing force-pushes the pull request head branch: any change
+done to that branch while Mergify is rebasing will be lost.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><div class="feature-tag"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan<br/>Feature 🦾</span></a></div>
+<div class="feature-tag"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-success">Essential Plan<br/>Feature 💪</span></a></div>
+If the repository is bigger than 512 MB, the <code class="docutils literal notranslate"><span class="pre">rebase</span></code> action is only
+available for <a class="reference external" href="https://mergify.io/pricing">Essential and Premium  Plan subscribers</a>.</p>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline"> 🔗</a></h2>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -210,17 +226,6 @@ logged in Mergify dashboard once.</p></td>
 </tr>
 </tbody>
 </table>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Be aware that rebasing force-pushes the pull request head branch: any change
-done to that branch while Mergify is rebasing will be lost.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><div class="feature-tag"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan<br/>Feature 🦾</span></a></div>
-<div class="feature-tag"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-success">Essential Plan<br/>Feature 💪</span></a></div>
-If the repository is bigger than 512 MB, the <code class="docutils literal notranslate"><span class="pre">rebase</span></code> action is only
-available for <a class="reference external" href="https://mergify.io/pricing">Essential and Premium  Plan subscribers</a>.</p>
 </div>
 </div>
 
