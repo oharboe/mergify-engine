@@ -149,7 +149,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../examples/">🧪 Example Rules</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../examples/#automatic-merge-when-ci-works-and-approving-reviews">✅ Automatic Merge when CI works and approving reviews</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../examples/#using-regular-expressions">🌀 Using Regular Expressions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/#merging-based-on-modified-files">🗂 Merging based on Modified Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/#less-strict-rules-for-stable-branches">🏖 Less Strict Rules for Stable Branches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/#using-labels-to-enable-disable-merge">🎬 Using Labels to Enable/Disable Merge</a></li>
@@ -298,13 +297,34 @@ If the options are defined in <code class="docutils literal notranslate"><span c
 <h2>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline"> 🔗</a></h2>
 <div class="section" id="regular-expression">
 <h3>Regular Expression<a class="headerlink" href="#regular-expression" title="Permalink to this headline"> 🔗</a></h3>
-<p>In <a class="reference internal" href="../conditions/#conditions"><span class="std std-ref">🎯 Conditions</span></a> you can use regular expression with matching <a class="reference internal" href="../conditions/#operators"><span class="std std-ref">Operators</span></a>.</p>
-<p>Mergify leverages <a class="reference external" href="https://docs.python.org/3/library/re.html">Python regular expression</a> to match rules.</p>
-<p>See the specific <a class="reference internal" href="../examples/#examples"><span class="std std-ref">🧪 Example Rules</span></a> for configuration file examples.</p>
+<p>You can use regular expression with matching <a class="reference internal" href="../conditions/#operators"><span class="std std-ref">operators</span></a> in
+your <a class="reference internal" href="../conditions/#conditions"><span class="std std-ref">conditions</span></a> .</p>
+<p>Mergify leverages <a class="reference external" href="https://docs.python.org/3/library/re.html">Python regular expressions</a> to match rules.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You can use <a class="reference external" href="https://regex101.com/">regex101</a>, <a class="reference external" href="http://www.pyregex.com">PyRegex</a> or <a class="reference external" href="https://pythex.org/">Pythex</a> to test your
 regular expressions.</p>
+</div>
+<div class="section" id="examples">
+<h4>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"> 🔗</a></h4>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">add python label if a Python file is modified</span>
+    <span class="nt">conditions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">files~=\.py$</span>
+    <span class="nt">actions</span><span class="p">:</span>
+      <span class="nt">label</span><span class="p">:</span>
+        <span class="nt">add</span><span class="p">:</span>
+          <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
+
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for master when the title does not contain “WIP” (ignoring case)</span>
+    <span class="nt">conditions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">base=master</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-title~=(?i)wip</span>
+    <span class="nt">actions</span><span class="p">:</span>
+      <span class="nt">merge</span><span class="p">:</span>
+        <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="template">
