@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Mergify Documentation for Commands" name="description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+<meta content="Mergify Documentation for Commands" name="description" />
 <meta content="mergify, commands" name="keywords" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -154,6 +155,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../examples/#using-labels-to-enable-disable-merge">🎬 Using Labels to Enable/Disable Merge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/#using-labels-to-prioritize-merge">⚡️ Using Labels to Prioritize Merge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/#require-all-requested-reviews-to-be-approved">🙅️ Require All Requested Reviews to Be Approved</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/#matching-pull-requests-with-task-lists">☑️ Matching Pull Requests with Task Lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/#bots">🤖 Bots</a></li>
 </ul>
 </li>
@@ -177,7 +179,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="commands">
+  <section id="commands">
 <span id="id1"></span><h1>⚙️ Commands<a class="headerlink" href="#commands" title="Permalink to this headline"> 🔗</a></h1>
 <p>Mergify is able to run some <a class="reference internal" href="../actions/#actions"><span class="std std-ref">🚀 Actions</span></a> directly without leveraging the rule
 system. By commenting on a pull request, you can ask Mergify to executes some
@@ -187,7 +189,7 @@ actions.</p>
 </pre></div>
 </div>
 <p>The list of available commands is listed below, with their parameters:</p>
-<div class="section" id="rebase">
+<section id="rebase">
 <span id="rebase-command"></span><h2>rebase<a class="headerlink" href="#rebase" title="Permalink to this headline"> 🔗</a></h2>
 <blockquote>
 <div><p>Runs the <a class="reference internal" href="../actions/rebase/#rebase-action"><span class="std std-ref">rebase</span></a> action.</p>
@@ -213,8 +215,8 @@ actions.</p>
 If the repository is bigger than 512 MB, the <code class="docutils literal notranslate"><span class="pre">rebase</span></code> action is only
 available for <a class="reference external" href="https://mergify.io/pricing">Essential and Premium Plan subscribers</a>.</p>
 </div>
-</div>
-<div class="section" id="update">
+</section>
+<section id="update">
 <span id="update-command"></span><h2>update<a class="headerlink" href="#update" title="Permalink to this headline"> 🔗</a></h2>
 <blockquote>
 <div><p>Runs the <a class="reference internal" href="../actions/update/#update-action"><span class="std std-ref">update</span></a> action.</p>
@@ -233,8 +235,8 @@ available for <a class="reference external" href="https://mergify.io/pricing">Es
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="backport">
+</section>
+<section id="backport">
 <span id="backport-command"></span><h2>backport<a class="headerlink" href="#backport" title="Permalink to this headline"> 🔗</a></h2>
 <p>Runs the <a class="reference internal" href="../actions/backport/#backport-action"><span class="std std-ref">backport</span></a> action.</p>
 <table class="colwidths-given docutils align-left">
@@ -258,8 +260,8 @@ available for <a class="reference external" href="https://mergify.io/pricing">Es
 If the repository is bigger than 512 MB, the <code class="docutils literal notranslate"><span class="pre">backport</span></code> action is only
 available for <a class="reference external" href="https://mergify.io/pricing">Essential and Premium Plan subscribers</a>.</p>
 </div>
-</div>
-<div class="section" id="refresh">
+</section>
+<section id="refresh">
 <h2>refresh<a class="headerlink" href="#refresh" title="Permalink to this headline"> 🔗</a></h2>
 <p>Re-evalutes your Mergify rules on this pull request.</p>
 <table class="colwidths-given docutils align-left">
@@ -276,8 +278,8 @@ available for <a class="reference external" href="https://mergify.io/pricing">Es
 </tr>
 </tbody>
 </table>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>

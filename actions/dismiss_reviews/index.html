@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Mergify Documentation for Dismiss Review Action" name="description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+<meta content="Mergify Documentation for Dismiss Review Action" name="description" />
 <meta content="mergify, dismiss, review" name="keywords" />
 <meta content="Dismiss previous reviews on a pull request." name="summary" />
 <meta content="user-slash" name="doc:icon" />
@@ -161,6 +162,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../examples/#using-labels-to-enable-disable-merge">🎬 Using Labels to Enable/Disable Merge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples/#using-labels-to-prioritize-merge">⚡️ Using Labels to Prioritize Merge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples/#require-all-requested-reviews-to-be-approved">🙅️ Require All Requested Reviews to Be Approved</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/#matching-pull-requests-with-task-lists">☑️ Matching Pull Requests with Task Lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples/#bots">🤖 Bots</a></li>
 </ul>
 </li>
@@ -184,13 +186,13 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="dismiss-reviews">
+  <section id="dismiss-reviews">
 <span id="dismiss-reviews-action"></span><h1>dismiss_reviews<a class="headerlink" href="#dismiss-reviews" title="Permalink to this headline"> 🔗</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">dismiss_reviews</span></code> action removes reviews done by collaborators when the
 pull request is updated. This is especially useful to make sure that a review
 does not stay when the branch is updated (e.g., new commits are added or the
 branch is rebased).</p>
-<div class="section" id="options">
+<section id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline"> 🔗</a></h2>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -230,10 +232,10 @@ whose review will be removed.</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="examples">
+</section>
+<section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"> 🔗</a></h2>
-<div class="section" id="removing-stale-reviews">
+<section id="removing-stale-reviews">
 <h3>🥶 Removing Stale Reviews<a class="headerlink" href="#removing-stale-reviews" title="Permalink to this headline"> 🔗</a></h3>
 <p>When a pull request is updated, GitHub does not remove the (possibly) outdated
 reviews approvals or changes request. It’s a good idea to remove them as soon
@@ -258,9 +260,9 @@ trusted, even if they update their code:</p>
       <span class="nt">dismiss_reviews</span><span class="p">:</span> <span class="p p-Indicator">{}</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>

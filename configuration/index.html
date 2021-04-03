@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Mergify Documentation for Configuration" name="description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+<meta content="Mergify Documentation for Configuration" name="description" />
 <meta content="mergify, configuration" name="keywords" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -154,6 +155,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../examples/#using-labels-to-enable-disable-merge">🎬 Using Labels to Enable/Disable Merge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/#using-labels-to-prioritize-merge">⚡️ Using Labels to Prioritize Merge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/#require-all-requested-reviews-to-be-approved">🙅️ Require All Requested Reviews to Be Approved</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/#matching-pull-requests-with-task-lists">☑️ Matching Pull Requests with Task Lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/#bots">🤖 Bots</a></li>
 </ul>
 </li>
@@ -177,9 +179,9 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="configuration-file">
+  <section id="configuration-file">
 <span id="configuration-file-format"></span><h1>🔖 Configuration File<a class="headerlink" href="#configuration-file" title="Permalink to this headline"> 🔗</a></h1>
-<div class="section" id="file-used">
+<section id="file-used">
 <h2>File Used<a class="headerlink" href="#file-used" title="Permalink to this headline"> 🔗</a></h2>
 <p>Mergify uses the configuration file that is:</p>
 <ul class="simple">
@@ -188,8 +190,8 @@ from the root directory.</p></li>
 <li><p>In the the default repository branch configured on GitHub — usually
 <code class="docutils literal notranslate"><span class="pre">master</span></code>.</p></li>
 </ul>
-</div>
-<div class="section" id="format">
+</section>
+<section id="format">
 <h2>Format<a class="headerlink" href="#format" title="Permalink to this headline"> 🔗</a></h2>
 <p>Here’s what you need to know about the file format:</p>
 <ul class="simple">
@@ -197,7 +199,7 @@ from the root directory.</p></li>
 <li><p>The file main type is a dictionary whose keys are named
 <code class="docutils literal notranslate"><span class="pre">pull_request_rules</span></code> and <code class="docutils literal notranslate"><span class="pre">defaults</span></code>.</p></li>
 </ul>
-<div class="section" id="pull-request-rules">
+<section id="pull-request-rules">
 <h3>Pull Request Rules<a class="headerlink" href="#pull-request-rules" title="Permalink to this headline"> 🔗</a></h3>
 <ul class="simple">
 <li><p>The value type of the <code class="docutils literal notranslate"><span class="pre">pull_request_rules</span></code> is list.</p></li>
@@ -237,8 +239,8 @@ matching pull requests.</p></td>
 <p>The rules are evaluated in the order they are defined in <code class="docutils literal notranslate"><span class="pre">pull_request_rules</span></code>
 and, therefore, the actions are executed in that same order.</p>
 <p>See <a class="reference internal" href="../examples/#examples"><span class="std std-ref">🧪 Example Rules</span></a> for configuration file examples.</p>
-</div>
-<div class="section" id="defaults">
+</section>
+<section id="defaults">
 <h3>Defaults<a class="headerlink" href="#defaults" title="Permalink to this headline"> 🔗</a></h3>
 <ul class="simple">
 <li><p>The value type of <code class="docutils literal notranslate"><span class="pre">defaults</span></code> is a dictionary.</p></li>
@@ -291,12 +293,12 @@ If the options are defined in <code class="docutils literal notranslate"><span c
         <span class="nt">bot_account</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Autobot</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="data-types">
+</section>
+</section>
+<section id="data-types">
 <h2>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline"> 🔗</a></h2>
-<div class="section" id="regular-expression">
-<h3>Regular Expression<a class="headerlink" href="#regular-expression" title="Permalink to this headline"> 🔗</a></h3>
+<section id="regular-expressions">
+<span id="id1"></span><h3>Regular Expressions<a class="headerlink" href="#regular-expressions" title="Permalink to this headline"> 🔗</a></h3>
 <p>You can use regular expression with matching <a class="reference internal" href="../conditions/#operators"><span class="std std-ref">operators</span></a> in
 your <a class="reference internal" href="../conditions/#conditions"><span class="std std-ref">conditions</span></a> .</p>
 <p>Mergify leverages <a class="reference external" href="https://docs.python.org/3/library/re.html">Python regular expressions</a> to match rules.</p>
@@ -305,7 +307,7 @@ your <a class="reference internal" href="../conditions/#conditions"><span class=
 <p>You can use <a class="reference external" href="https://regex101.com/">regex101</a>, <a class="reference external" href="http://www.pyregex.com">PyRegex</a> or <a class="reference external" href="https://pythex.org/">Pythex</a> to test your
 regular expressions.</p>
 </div>
-<div class="section" id="examples">
+<section id="examples">
 <h4>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"> 🔗</a></h4>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">add python label if a Python file is modified</span>
@@ -325,9 +327,9 @@ regular expressions.</p>
         <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="template">
+</section>
+</section>
+<section id="template">
 <span id="data-type-template"></span><h3>Template<a class="headerlink" href="#template" title="Permalink to this headline"> 🔗</a></h3>
 <p>The template data type is a regular string that is rendered using the <a class="reference external" href="https://jinja.palletsprojects.com/templates/">Jinja2
 template language</a>.</p>
@@ -350,9 +352,9 @@ login is <code class="docutils literal notranslate"><span class="pre">jd</span><
 attribute</span></a> names when using templates. The <code class="docutils literal notranslate"><span class="pre">-</span></code> is not a valid
 character for variable names in Jinja2 template.</p>
 </div>
-</div>
-</div>
-<div class="section" id="validation">
+</section>
+</section>
+<section id="validation">
 <h2>Validation<a class="headerlink" href="#validation" title="Permalink to this headline"> 🔗</a></h2>
 <p>Changes to the configuration file should be done via a pull request in order
 for Mergify to validate it via a GitHub check.</p>
@@ -365,8 +367,8 @@ request, you can use the following command line:</p>
 <form method=post enctype=multipart/form-data action=https://gh.mergify.io/validate target=_blank>
   <input type=file name=data>
   <input type=submit value=Validate>
-</form></div>
-</div>
+</form></section>
+</section>
 
 
           </div>

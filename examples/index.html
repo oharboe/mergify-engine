@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Mergify Configuration Examples" name="description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+<meta content="Mergify Configuration Examples" name="description" />
 <meta content="mergify, examples" name="keywords" />
 <meta content="Mergify Configuration Examples for Bots" name="description" />
 <meta content="mergify, examples, dependabot, greenkeeper, renovate, pyup, imgbot" name="keywords" />
@@ -156,6 +157,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#using-labels-to-enable-disable-merge">🎬 Using Labels to Enable/Disable Merge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-labels-to-prioritize-merge">⚡️ Using Labels to Prioritize Merge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#require-all-requested-reviews-to-be-approved">🙅️ Require All Requested Reviews to Be Approved</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#matching-pull-requests-with-task-lists">☑️ Matching Pull Requests with Task Lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#bots">🤖 Bots</a></li>
 </ul>
 </li>
@@ -179,7 +181,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="example-rules">
+  <section id="example-rules">
 <span id="examples"></span><h1>🧪 Example Rules<a class="headerlink" href="#example-rules" title="Permalink to this headline"> 🔗</a></h1>
 <p>Mergify allows you to define a lot of specific rules and workflows. There is a
 large number of <a class="reference internal" href="../conditions/#attributes"><span class="std std-ref">criterias</span></a> available to define rules: pull
@@ -194,10 +196,11 @@ and cover many common use cases.</p>
 <li><p><a class="reference internal" href="#using-labels-to-enable-disable-merge" id="id11">🎬 Using Labels to Enable/Disable Merge</a></p></li>
 <li><p><a class="reference internal" href="#using-labels-to-prioritize-merge" id="id12">⚡️ Using Labels to Prioritize Merge</a></p></li>
 <li><p><a class="reference internal" href="#require-all-requested-reviews-to-be-approved" id="id13">🙅️ Require All Requested Reviews to Be Approved</a></p></li>
-<li><p><a class="reference internal" href="#bots" id="id14">🤖 Bots</a></p></li>
+<li><p><a class="reference internal" href="#matching-pull-requests-with-task-lists" id="id14">☑️ Matching Pull Requests with Task Lists</a></p></li>
+<li><p><a class="reference internal" href="#bots" id="id15">🤖 Bots</a></p></li>
 </ul>
 </div>
-<div class="section" id="automatic-merge-when-ci-works-and-approving-reviews">
+<section id="automatic-merge-when-ci-works-and-approving-reviews">
 <h2><a class="toc-backref" href="#id8">✅ Automatic Merge when CI works and approving reviews</a><a class="headerlink" href="#automatic-merge-when-ci-works-and-approving-reviews" title="Permalink to this headline"> 🔗</a></h2>
 <p>This is a classic! That rule enables Mergify automatic merge when the
 continuous integration system validates the pull request and a human reviewed
@@ -242,8 +245,8 @@ certain member. You could therefore write such a rule:</p>
         <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="merging-based-on-modified-files">
+</section>
+<section id="merging-based-on-modified-files">
 <h2><a class="toc-backref" href="#id9">🗂 Merging based on Modified Files</a><a class="headerlink" href="#merging-based-on-modified-files" title="Permalink to this headline"> 🔗</a></h2>
 <p>You could decide to only merge some pull requests based on the files they
 touch. You can use the <code class="docutils literal notranslate"><span class="pre">files</span></code> attribute to access the modified file list and
@@ -276,8 +279,8 @@ the pull requests when the CI passes and when all the files are inside the
         <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="less-strict-rules-for-stable-branches">
+</section>
+<section id="less-strict-rules-for-stable-branches">
 <h2><a class="toc-backref" href="#id10">🏖 Less Strict Rules for Stable Branches</a><a class="headerlink" href="#less-strict-rules-for-stable-branches" title="Permalink to this headline"> 🔗</a></h2>
 <p>Some projects like having easier review requirements for maintenance branches.
 That usually means having e.g. 2 review requested for merging into <code class="docutils literal notranslate"><span class="pre">master</span></code>,
@@ -303,8 +306,8 @@ backport from <code class="docutils literal notranslate"><span class="pre">maste
         <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="using-labels-to-enable-disable-merge">
+</section>
+<section id="using-labels-to-enable-disable-merge">
 <h2><a class="toc-backref" href="#id11">🎬 Using Labels to Enable/Disable Merge</a><a class="headerlink" href="#using-labels-to-enable-disable-merge" title="Permalink to this headline"> 🔗</a></h2>
 <p>Some developers are not comfortable with fully automatic merge — they like
 having a final word before merging the code. In that case, you can add a
@@ -341,8 +344,8 @@ labelled as <code class="docutils literal notranslate"><span class="pre">work-in
 <p>In that case, if a pull request gets labelled with <code class="docutils literal notranslate"><span class="pre">work-in-progress</span></code>, it
 won’t be merged, even if approved by 2 contributors and having Travis CI
 passing.</p>
-</div>
-<div class="section" id="using-labels-to-prioritize-merge">
+</section>
+<section id="using-labels-to-prioritize-merge">
 <h2><a class="toc-backref" href="#id12">⚡️ Using Labels to Prioritize Merge</a><a class="headerlink" href="#using-labels-to-prioritize-merge" title="Permalink to this headline"> 🔗</a></h2>
 <p><div class="feature-tag"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan<br/>Feature 🦾</span></a></div></p>
 <p>When <code class="docutils literal notranslate"><span class="pre">smart</span></code> <a class="reference internal" href="../actions/merge/#strict-merge"><span class="std std-ref">Strict Merge</span></a> is enabled and many pull requests are
@@ -388,8 +391,8 @@ configure the priority option of <a class="reference internal" href="../actions/
 request will be added to the merge queue. Within the merge queue, the pull
 requests with the label <code class="docutils literal notranslate"><span class="pre">🚑</span> <span class="pre">hotfix</span></code> will be merged first. The pull requests
 from <cite>dependabot</cite> will always be merged last.</p>
-</div>
-<div class="section" id="require-all-requested-reviews-to-be-approved">
+</section>
+<section id="require-all-requested-reviews-to-be-approved">
 <h2><a class="toc-backref" href="#id13">🙅️ Require All Requested Reviews to Be Approved</a><a class="headerlink" href="#require-all-requested-reviews-to-be-approved" title="Permalink to this headline"> 🔗</a></h2>
 <p>If all requested reviews have been approved, then the number of
 <code class="docutils literal notranslate"><span class="pre">review-requested</span></code> should become 0. That’s not a sufficient condition to
@@ -408,9 +411,37 @@ review.</p>
 </div>
 <p>Note that if a requested review is dismissed, then it doesn’t count as a review
 that would prevent the merge.</p>
+</section>
+<section id="matching-pull-requests-with-task-lists">
+<h2><a class="toc-backref" href="#id14">☑️ Matching Pull Requests with Task Lists</a><a class="headerlink" href="#matching-pull-requests-with-task-lists" title="Permalink to this headline"> 🔗</a></h2>
+<p><a class="reference external" href="https://guides.github.com/features/mastering-markdown/">GitHub Markdown</a>
+allows users to use task lists in their pull request body. Task lists render
+with clickable checkboxes in comments and you can select or unselect the
+checkboxes to mark them as complete or incomplete. Tasks lists are often used
+in <a class="reference external" href="https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository#adding-a-pull-request-template">pull request templates</a>.</p>
+<img alt="../_images/tasklist.png" src="../_images/tasklist.png" />
+<p>You can leverage Mergify conditions to match task lists using the <code class="docutils literal notranslate"><span class="pre">body</span></code>
+attribute and <a class="reference internal" href="../configuration/#regular-expressions"><span class="std std-ref">regular expressions</span></a>. If your body
+contains the following Markdown, you can make sure those boxes are checked
+before, e.g., doing a merge.</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>[ ] Security has been checked
+[ ] Changes have been documented
+</pre></div>
 </div>
-<div class="section" id="bots">
-<h2><a class="toc-backref" href="#id14">🤖 Bots</a><a class="headerlink" href="#bots" title="Permalink to this headline"> 🔗</a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">pull_request_rules</span>
+  <span class="l l-Scalar l-Scalar-Plain">- name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">merge when checkboxes are checked</span>
+    <span class="l l-Scalar l-Scalar-Plain">conditions</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">body~=(?m)^\[X\] Security has been checked</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">body~=(?m)^\[X\] Changes have been documented</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">check-success=my favorite ci</span>
+<span class=" -Error">    </span><span class="nt">actions</span><span class="p">:</span>
+      <span class="nt">merge</span><span class="p">:</span>
+        <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
+</pre></div>
+</div>
+</section>
+<section id="bots">
+<h2><a class="toc-backref" href="#id15">🤖 Bots</a><a class="headerlink" href="#bots" title="Permalink to this headline"> 🔗</a></h2>
 <p>Some pull requests might be created automatically by other tools, such as the
 ones sending automatic dependencies update. You might decide that there’s no
 need to manually review and approve those pull request as long as your
@@ -419,7 +450,7 @@ continuous integration system validates them.</p>
 automatically merge those updates without human intervention if the continuous
 integration system validates them. <code class="docutils literal notranslate"><span class="pre">Travis</span> <span class="pre">CI</span> <span class="pre">-</span> <span class="pre">Pull</span> <span class="pre">Request</span></code> is used as the
 CI check name here — adjust it to whatever you use.</p>
-<div class="section" id="dependabot">
+<section id="dependabot">
 <h3>Dependabot<a class="headerlink" href="#dependabot" title="Permalink to this headline"> 🔗</a></h3>
 <p><a class="reference external" href="https://github.com/features/security">Dependabot</a> is the bot behind GitHub
 automatic security update. It sends automatic updates for your project’s
@@ -452,8 +483,8 @@ request only if they are for the same major version.</p>
 <p>The additional <cite>title</cite> based rule in <code class="docutils literal notranslate"><span class="pre">conditions</span></code> make sure that only the
 updates from <cite>1.x</cite> to <cite>1.y</cite> will be automatically merged. Updates from, e.g.,
 <cite>2.x</cite> to <cite>3.x</cite> will be ignored by Mergify.</p>
-</div>
-<div class="section" id="snyk">
+</section>
+<section id="snyk">
 <h3>Snyk<a class="headerlink" href="#snyk" title="Permalink to this headline"> 🔗</a></h3>
 <p><a class="reference external" href="https://snyk.io">Snyk</a> sends automatic updates for your
 project’s dependencies.</p>
@@ -468,8 +499,8 @@ project’s dependencies.</p>
         <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="renovate">
+</section>
+<section id="renovate">
 <h3>Renovate<a class="headerlink" href="#renovate" title="Permalink to this headline"> 🔗</a></h3>
 <p><a class="reference external" href="https://renovatebot.com/">Renovate</a> sends automatic updates for your
 project’s dependencies.</p>
@@ -483,8 +514,8 @@ project’s dependencies.</p>
         <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="requires-io">
+</section>
+<section id="requires-io">
 <h3>Requires.io<a class="headerlink" href="#requires-io" title="Permalink to this headline"> 🔗</a></h3>
 <p><a class="reference external" href="https://requires.io/">Requires.io</a> sends automatic updates for your
 project’s dependencies (only Python’s packages).</p>
@@ -499,8 +530,8 @@ project’s dependencies (only Python’s packages).</p>
         <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="pyup">
+</section>
+<section id="pyup">
 <h3>PyUp<a class="headerlink" href="#pyup" title="Permalink to this headline"> 🔗</a></h3>
 <p><a class="reference external" href="https://pyup.io/">PyUp</a> sends automatic updates for your project’s
 Python dependencies.</p>
@@ -514,8 +545,8 @@ Python dependencies.</p>
         <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="imgbot">
+</section>
+<section id="imgbot">
 <h3>ImgBot<a class="headerlink" href="#imgbot" title="Permalink to this headline"> 🔗</a></h3>
 <p><a class="reference external" href="https://github.com/marketplace/imgbot">ImgBot</a> optimizes your images and
 saves you time.</p>
@@ -529,9 +560,9 @@ saves you time.</p>
         <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>

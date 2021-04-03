@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Mergify Documentation for Copy Action" name="description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+<meta content="Mergify Documentation for Copy Action" name="description" />
 <meta content="mergify, copy, pull request" name="keywords" />
 <meta content="Copy a pull request and create a new pull request." name="summary" />
 <meta content="copy" name="doc:icon" />
@@ -161,6 +162,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../examples/#using-labels-to-enable-disable-merge">🎬 Using Labels to Enable/Disable Merge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples/#using-labels-to-prioritize-merge">⚡️ Using Labels to Prioritize Merge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples/#require-all-requested-reviews-to-be-approved">🙅️ Require All Requested Reviews to Be Approved</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/#matching-pull-requests-with-task-lists">☑️ Matching Pull Requests with Task Lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples/#bots">🤖 Bots</a></li>
 </ul>
 </li>
@@ -184,7 +186,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="copy">
+  <section id="copy">
 <span id="copy-action"></span><h1>copy<a class="headerlink" href="#copy" title="Permalink to this headline"> 🔗</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">copy</span></code> action creates a copy of the pull request targetting other branches.</p>
 <div class="admonition warning">
@@ -194,7 +196,7 @@
 If the repository is bigger than 512 MB, the <code class="docutils literal notranslate"><span class="pre">copy</span></code> action is only
 available for <a class="reference external" href="https://mergify.io/pricing">Essential and Premium  Plan subscribers</a>.</p>
 </div>
-<div class="section" id="options">
+<section id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline"> 🔗</a></h2>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -240,10 +242,10 @@ cherry-picking the commits.</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="examples">
+</section>
+<section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"> 🔗</a></h2>
-<div class="section" id="copy-a-pull-request-to-another-branch">
+<section id="copy-a-pull-request-to-another-branch">
 <h3>🔁 Copy a Pull Request to Another Branch<a class="headerlink" href="#copy-a-pull-request-to-another-branch" title="Permalink to this headline"> 🔗</a></h3>
 <p>The following rule copies a pull request from the <code class="docutils literal notranslate"><span class="pre">staging</span></code> branch to the
 <code class="docutils literal notranslate"><span class="pre">prod</span></code> branch as soon as the CI passes and a label <code class="docutils literal notranslate"><span class="pre">ready</span> <span class="pre">for</span> <span class="pre">prod</span></code> is set
@@ -260,9 +262,9 @@ on the pull request:</p>
           <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">prod</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
