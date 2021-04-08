@@ -254,6 +254,13 @@ cherry-picking the commits.</p></td>
 <td><p>The label to add to the created pull request if it has conflicts and
 <code class="docutils literal notranslate"><span class="pre">ignore_conflicts</span></code> is set to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></td>
 </tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">assignees</span></code></p></td>
+<td><p>list of <a class="reference internal" href="../../configuration/#data-type-template"><span class="std std-ref">Template</span></a></p></td>
+<td></td>
+<td><p>Users to assign the newly created pull request. As the type is
+<a class="reference internal" href="../../configuration/#data-type-template"><span class="std std-ref">Template</span></a>, you could use, e.g., <code class="docutils literal notranslate"><span class="pre">{{author}}</span></code> to assign
+the pull request to its original author.</p></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -274,6 +281,8 @@ added and the pull request merged:</p>
       <span class="nt">backport</span><span class="p">:</span>
         <span class="nt">branches</span><span class="p">:</span>
           <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">stable</span>
+        <span class="nt">assignees</span><span class="p">:</span>
+          <span class="p p-Indicator">-</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">author</span><span class="nv"> </span><span class="s">}}&quot;</span>
 </pre></div>
 </div>
 </section>
