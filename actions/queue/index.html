@@ -195,9 +195,7 @@ Merging broken pull requests can happen when outdated pull requests are being
 merged in their base branch.</p>
 <section id="why-queues">
 <h2>Why Queues?<a class="headerlink" href="#why-queues" title="Permalink to this headline"> 🔗</a></h2>
-<section id="the-problem">
-<span id="merge-queue-problem"></span><h3>The Problem<a class="headerlink" href="#the-problem" title="Permalink to this headline"> 🔗</a></h3>
-<p>To understand the problem queues resolve, imagine the following situation:</p>
+<p id="merge-queue-problem">To understand the problem queues resolve, imagine the following situation:</p>
 <ul class="simple">
 <li><p>The base branch (e.g., <code class="docutils literal notranslate"><span class="pre">main</span></code>) has its continuous integration testing
 passing correctly.</p></li>
@@ -223,7 +221,6 @@ did not test the pull request with the <cite>new commit</cite> added to the base
 This <cite>new commit</cite> might have introduced some new tests in the base branch while
 the pull request was open. That pull request may not have the correct code to
 pass this new test.</p>
-</section>
 <section id="using-queues">
 <h3>Using Queues<a class="headerlink" href="#using-queues" title="Permalink to this headline"> 🔗</a></h3>
 <p>Using a merge queue solves that issue by updating any pull request that is not
