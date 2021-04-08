@@ -225,7 +225,7 @@ from the root directory.</p></li>
 used when reporting information about a rule.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">conditions</span></code></p></td>
-<td><p>array of <a class="reference internal" href="../conditions/#conditions"><span class="std std-ref">🎯 Conditions</span></a></p></td>
+<td><p>list of <a class="reference internal" href="../conditions/#conditions"><span class="std std-ref">🎯 Conditions</span></a></p></td>
 <td><p>A list of <a class="reference internal" href="../conditions/#conditions"><span class="std std-ref">🎯 Conditions</span></a> string that must match against the pull
 request for the rule to be applied.</p></td>
 </tr>
@@ -239,6 +239,14 @@ matching pull requests.</p></td>
 <p>The rules are evaluated in the order they are defined in <code class="docutils literal notranslate"><span class="pre">pull_request_rules</span></code>
 and, therefore, the actions are executed in that same order.</p>
 <p>See <a class="reference internal" href="../examples/#examples"><span class="std std-ref">🧪 Example Rules</span></a> for configuration file examples.</p>
+</section>
+<section id="queue-rules">
+<h3>Queue Rules<a class="headerlink" href="#queue-rules" title="Permalink to this headline"> 🔗</a></h3>
+<ul class="simple">
+<li><p>The value type of the <code class="docutils literal notranslate"><span class="pre">queue_rules</span></code> is list.</p></li>
+<li><p>Each entry in <code class="docutils literal notranslate"><span class="pre">queue_rules</span></code> must be a dictionary.</p></li>
+</ul>
+<p>See <a class="reference internal" href="../actions/queue/#queue-rules"><span class="std std-ref">Queue Rules</span></a> for the complete list and description of options.</p>
 </section>
 <section id="defaults">
 <h3>Defaults<a class="headerlink" href="#defaults" title="Permalink to this headline"> 🔗</a></h3>
