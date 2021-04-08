@@ -275,7 +275,7 @@ and, therefore, the actions are executed in that same order.</p>
 </table>
 <p>The <code class="docutils literal notranslate"><span class="pre">defaults</span></code> section is used to define default configuration valued for actions run by pull request rules and by <a class="reference internal" href="../commands/#commands"><span class="std std-ref">⚙️ Commands</span></a>.
 If the options are defined in <code class="docutils literal notranslate"><span class="pre">pull_request_rules</span></code> they are used, otherwise, the values set in <code class="docutils literal notranslate"><span class="pre">defaults</span></code> are used.</p>
-<p>See example below:</p>
+<p>For example:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">defaults</span><span class="p">:</span>
   <span class="nt">actions</span><span class="p">:</span>
     <span class="nt">comment</span><span class="p">:</span>
@@ -290,7 +290,7 @@ If the options are defined in <code class="docutils literal notranslate"><span c
         <span class="nt">message</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">I 💙 Mergify</span>
 </pre></div>
 </div>
-<p>The config above is the same as below:</p>
+<p>The configuration above is the same as below:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">comment with default</span>
     <span class="nt">conditions</span><span class="p">:</span>
