@@ -195,6 +195,13 @@ maintained for a while by cherry-picking patches from the development branch.</p
 the development branch are ported back to the stable branch(es). The stable
 branch can then be used to release a new minor version of the software, fixing
 some of its bugs.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><div class="feature-tag"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan<br/>Feature 🦾</span></a></div>
+<div class="feature-tag"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-success">Essential Plan<br/>Feature 💪</span></a></div>
+If the repository is bigger than 512 MB, the <code class="docutils literal notranslate"><span class="pre">backport</span></code> action is only
+available for <a class="reference external" href="https://mergify.io/pricing">Essential and Premium subscribers</a>.</p>
+</div>
 <p>As this process of backporting patches can be tedious, Mergify automates this
 mechanism to save developers’ time and ease their duty.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">backport</span></code> action copies the pull request into another branch <em>once the
@@ -202,13 +209,6 @@ pull request has been merged</em>.</p>
 <p>Once the backporting pull request is closed or merged, Mergify will
 automatically delete the backport head branch that it created.</p>
 <p>You can also trigger backports using the <a class="reference internal" href="../../commands/#backport-command"><span class="std std-ref">backport</span></a> command.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><div class="feature-tag"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan<br/>Feature 🦾</span></a></div>
-<div class="feature-tag"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-success">Essential Plan<br/>Feature 💪</span></a></div>
-If the repository is bigger than 512 MB, the <code class="docutils literal notranslate"><span class="pre">backport</span></code> action is only
-available for <a class="reference external" href="https://mergify.io/pricing">Essential and Premium subscribers</a>.</p>
-</div>
 <section id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline"> 🔗</a></h2>
 <table class="colwidths-given docutils align-default">

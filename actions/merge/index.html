@@ -304,6 +304,10 @@ end of the title.</p></li>
 </section>
 <section id="defining-the-commit-message">
 <span id="commit-message"></span><h2>Defining the Commit Message<a class="headerlink" href="#defining-the-commit-message" title="Permalink to this headline"> 🔗</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This feature only works when <code class="docutils literal notranslate"><span class="pre">commit_message</span></code> is set to <code class="docutils literal notranslate"><span class="pre">default</span></code>.</p>
+</div>
 <p>When a pull request is merged using the <code class="docutils literal notranslate"><span class="pre">squash</span></code> or <code class="docutils literal notranslate"><span class="pre">merge</span></code> method, you can
 override the default commit message. To that end, you need to add a section in
 the pull request body that starts with <code class="docutils literal notranslate"><span class="pre">Commit</span> <span class="pre">Message</span></code>.</p>
@@ -334,13 +338,14 @@ by writing using the <a class="reference internal" href="../../configuration/#da
 </pre></div>
 </div>
 <p>Check the <a class="reference internal" href="../../configuration/#data-type-template"><span class="std std-ref">Template</span></a> for more details on the format.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This feature only works when <code class="docutils literal notranslate"><span class="pre">commit_message</span></code> is set to <code class="docutils literal notranslate"><span class="pre">default</span></code>.</p>
-</div>
 </section>
 <section id="strict-merge">
 <span id="id1"></span><h2>Strict Merge<a class="headerlink" href="#strict-merge" title="Permalink to this headline"> 🔗</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>While <cite>strict merge</cite> solves most issues, the <a class="reference internal" href="../queue/#queue-action"><span class="std std-ref">queue action</span></a> and its <a class="reference internal" href="../queue/#queue-rules"><span class="std std-ref">queue rules</span></a> provide a more powerful
+solution and offer total control of the merge queue.</p>
+</div>
 <p>The <cite>strict merge</cite> option enables a simple merge queue that prevents merging
 broken pull requests. That situation can arise when outdated pull requests are
 being merged in their base branch. For an complete explanation of the problem
@@ -354,11 +359,6 @@ multiple pull requests are mergeable, they are scheduled to be merged
 sequentially, and they will be updated on top of each other.</p>
 <p>The pull request branch update is only done when the pull request is ready to
 be merged by the engine, e.g., when all the <cite>conditions</cite> are validated.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>While <cite>strict merge</cite> solves most issues, the <a class="reference internal" href="../queue/#queue-action"><span class="std std-ref">queue action</span></a> and its <a class="reference internal" href="../queue/#queue-rules"><span class="std std-ref">queue rules</span></a> provide a more powerful
-solution and offer total control of the merge queue.</p>
-</div>
 <section id="enabling-the-strict-option">
 <h3>Enabling the Strict Option<a class="headerlink" href="#enabling-the-strict-option" title="Permalink to this headline"> 🔗</a></h3>
 <p>To enable <cite>strict merge</cite>, you need to set the value of <code class="docutils literal notranslate"><span class="pre">strict</span></code> to <code class="docutils literal notranslate"><span class="pre">true</span></code>
@@ -399,13 +399,13 @@ the push, while it actually has been executed by Mergify.</p></li>
 </section>
 <section id="git-merge-workflow-and-mergify-equivalent-configuration">
 <h2>Git merge workflow and Mergify equivalent configuration<a class="headerlink" href="#git-merge-workflow-and-mergify-equivalent-configuration" title="Permalink to this headline"> 🔗</a></h2>
-<p>There is a lot of different ways to merge pull requests. You can replicate many
-<code class="docutils literal notranslate"><span class="pre">git</span></code> based merge when using Mergify — here’s a list of equivalence.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><cite>base branch</cite> is usually <code class="docutils literal notranslate"><span class="pre">master</span></code>, <code class="docutils literal notranslate"><span class="pre">main</span></code> or <code class="docutils literal notranslate"><span class="pre">dev</span></code>,
 <cite>head branch</cite> is the pull request branch.</p>
 </div>
+<p>There is a lot of different ways to merge pull requests. You can replicate many
+<code class="docutils literal notranslate"><span class="pre">git</span></code> based merge when using Mergify — here’s a list of equivalence.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 50%" />
