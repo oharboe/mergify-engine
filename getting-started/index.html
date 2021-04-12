@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-<meta content="Introduction to Mergify Configuration and Deployment" name="description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Introduction to Mergify Configuration and Deployment" name="description" />
 <meta content="mergify, automation, deployment, start" name="keywords" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -180,9 +179,9 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="getting-started">
+  <div class="section" id="getting-started">
 <h1>➡️ Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline"> 🔗</a></h1>
-<section id="installation">
+<div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"> 🔗</a></h2>
 <p>Mergify is a GitHub Application that operates on your GitHub repositories to
 automate them. You need to install Mergify on your GitHub Account to have it
@@ -197,10 +196,10 @@ Mergify access to. Select any repository you like, or all if you wish.</p></li>
 <ol class="arabic simple" start="4">
 <li><p>You will be redirected to the dashboard.</p></li>
 </ol>
-</section>
-<section id="configuration">
+</div>
+<div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline"> 🔗</a></h2>
-<section id="the-configuration-file">
+<div class="section" id="the-configuration-file">
 <h3>The Configuration File<a class="headerlink" href="#the-configuration-file" title="Permalink to this headline"> 🔗</a></h3>
 <p>Mergify applies rules to your pull requests. To do that, you need to create a
 Mergify configuration in each repository where Mergify is used.</p>
@@ -208,8 +207,8 @@ Mergify configuration in each repository where Mergify is used.</p>
 repository and named either <code class="docutils literal notranslate"><span class="pre">.mergify.yml</span></code> or <code class="docutils literal notranslate"><span class="pre">.mergify/config.yml</span></code> or <code class="docutils literal notranslate"><span class="pre">.github/mergify.yml</span></code>.</p>
 <p>As the file name implies, the configuration file format is based on <a class="reference external" href="https://yaml.org/">YAML</a>, a simplistic file format for data. The configuration
 file format is entirely documented in <a class="reference internal" href="../configuration/#configuration-file-format"><span class="std std-ref">🔖 Configuration File</span></a>.</p>
-</section>
-<section id="the-rules">
+</div>
+<div class="section" id="the-rules">
 <h3>The Rules<a class="headerlink" href="#the-rules" title="Permalink to this headline"> 🔗</a></h3>
 <p>The configuration file is composed of a main key named <code class="docutils literal notranslate"><span class="pre">pull_request_rules</span></code>
 which contains a list of rules.</p>
@@ -222,8 +221,8 @@ applied.</p></li>
 <li><p>A list of <em>actions</em>. Each action will be applied as soon as the pull request
 matches the <em>conditions</em>.</p></li>
 </ul>
-</section>
-<section id="a-first-rule">
+</div>
+<div class="section" id="a-first-rule">
 <h3>A First Rule<a class="headerlink" href="#a-first-rule" title="Permalink to this headline"> 🔗</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -258,8 +257,8 @@ use.</p></li>
 </ul>
 <p>Fore more details about the configuration file format, check
 <a class="reference internal" href="../configuration/#configuration-file-format"><span class="std std-ref">🔖 Configuration File</span></a>.</p>
-</section>
-<section id="creating-the-configuration-file">
+</div>
+<div class="section" id="creating-the-configuration-file">
 <h3>Creating the Configuration File<a class="headerlink" href="#creating-the-configuration-file" title="Permalink to this headline"> 🔗</a></h3>
 <p>You can create your configuration file using your favorite text editor.
 However, writing and testing in the config editor can be easier. Go to <a class="reference external" href="https://dashboard.mergify.io">your
@@ -280,9 +279,9 @@ Mergify configuration. You can merge them by clicking on the merge button.</p>
 <img alt="Mergify config editor PR" class="align-center" src="../_images/config-editor-pr.png" />
 <p>Once your configuration is merged, Mergify will apply it to all your pull
 requests.</p>
-</section>
-</section>
-<section id="understanding-mergify-check-report">
+</div>
+</div>
+<div class="section" id="understanding-mergify-check-report">
 <h2>Understanding Mergify Check Report<a class="headerlink" href="#understanding-mergify-check-report" title="Permalink to this headline"> 🔗</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -296,15 +295,15 @@ about the state of the pull request according to the defined rules.</p>
 <img alt="status check" class="align-center" src="../_images/mergify-checks-status.png" />
 <p>When all the criterias of the rules are satisfied, Mergify executes the
 configured actions and e.g. merges the pull request.</p>
-</section>
-<section id="controlling-mergify-with-commands">
+</div>
+<div class="section" id="controlling-mergify-with-commands">
 <h2>Controlling Mergify with Commands<a class="headerlink" href="#controlling-mergify-with-commands" title="Permalink to this headline"> 🔗</a></h2>
 <p>Mergify also exposes a set of <a class="reference internal" href="../commands/#commands"><span class="std std-ref">⚙️ Commands</span></a> that you can trigger by commenting on
 the pull request.</p>
 <img alt="status check" class="align-center" src="../_images/mergify-command.png" />
 <p>You can consult the list of those commands on the <a class="reference internal" href="../commands/#commands"><span class="std std-ref">⚙️ Commands</span></a> page.</p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>

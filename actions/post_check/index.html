@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-<meta content="Mergify Documentation for Post Check Action" name="description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Mergify Documentation for Post Check Action" name="description" />
 <meta content="mergify, post, check" name="keywords" />
 <meta content="Post custom status check to a pull request." name="summary" />
 <meta content="check" name="doc:icon" />
@@ -187,13 +186,13 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="post-check">
+  <div class="section" id="post-check">
 <span id="post-check-action"></span><h1>post_check<a class="headerlink" href="#post-check" title="Permalink to this headline"> 🔗</a></h1>
 <p><div class="feature-tag"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan<br/>Feature 🦾</span></a></div></p>
 <p>The <code class="docutils literal notranslate"><span class="pre">post_check</span></code> action adds an item in a pull request check list. The check
 status is <code class="docutils literal notranslate"><span class="pre">success</span></code> when all conditions match, otherwise, it is set to
 <code class="docutils literal notranslate"><span class="pre">failure</span></code>.</p>
-<section id="options">
+<div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline"> 🔗</a></h2>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -232,10 +231,10 @@ additional variables:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">check_conditions</span> <span class="pre">}}</span></code> the list of all conditions with a checkbox marked if the condition match</p></li>
 </ul>
 </div></blockquote>
-</section>
-<section id="examples">
+</div>
+<div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"> 🔗</a></h2>
-<section id="enforcing-conventional-commits">
+<div class="section" id="enforcing-conventional-commits">
 <h3>📜 Enforcing Conventional Commits<a class="headerlink" href="#enforcing-conventional-commits" title="Permalink to this headline"> 🔗</a></h3>
 <p>You might want to enforce some guidelines as how to write pull request title.
 The following rules add such a check, making sure your team follows
@@ -261,9 +260,9 @@ The following rules add such a check, making sure your team follows
 <p>The result of this check will be visible in GitHub user interface, near the
 merge button.</p>
 <img alt="../../_images/post-check-actions.png" src="../../_images/post-check-actions.png" />
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
           </div>

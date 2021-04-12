@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-<meta content="Mergify Frequently Asked Questions" name="description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Mergify Frequently Asked Questions" name="description" />
 <meta content="mergify, faq, questions, help" name="keywords" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -176,16 +175,16 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="faq">
+  <div class="section" id="faq">
 <h1>💬 FAQ<a class="headerlink" href="#faq" title="Permalink to this headline"> 🔗</a></h1>
-<section id="mergify-is-unable-to-merge-my-pull-request-due-to-my-branch-protection-settings">
+<div class="section" id="mergify-is-unable-to-merge-my-pull-request-due-to-my-branch-protection-settings">
 <h2>Mergify is unable to merge my pull request due to my branch protection settings<a class="headerlink" href="#mergify-is-unable-to-merge-my-pull-request-due-to-my-branch-protection-settings" title="Permalink to this headline"> 🔗</a></h2>
 <p>This happens usually if you limit the people that have the authorization to
 merge pull requests. To make it works with Mergify you must add <code class="docutils literal notranslate"><span class="pre">Mergify</span></code> to the
 branch protection settings in the “<cite>Restrict who can push to matching branches</cite>” list.</p>
 <img alt="../_images/mergify-push-user.png" src="../_images/mergify-push-user.png" />
-</section>
-<section id="why-did-mergify-seem-to-have-merged-my-pull-request-whereas-all-conditions-were-not-true">
+</div>
+<div class="section" id="why-did-mergify-seem-to-have-merged-my-pull-request-whereas-all-conditions-were-not-true">
 <h2>Why did Mergify seem to have merged my pull request whereas all conditions were not true?<a class="headerlink" href="#why-did-mergify-seem-to-have-merged-my-pull-request-whereas-all-conditions-were-not-true" title="Permalink to this headline"> 🔗</a></h2>
 <p>The GitHub user interface might be misleading you in thinking that your pull
 request has been merged by Mergify, while it wasn’t.</p>
@@ -195,12 +194,12 @@ Mergify too. GitHub detects that A’s commits are a subset of B’s commits and
 therefore decides to automatically marks pull request A as merged.</p>
 <p>Be sure that Mergify did nothing on the pull request A if it told you so in the
 <cite>Checks</cite> tab. Dont’t be fooled by GitHub UI.</p>
-</section>
-<section id="i-see-a-rebase-and-force-push-done-by-a-member-of-the-repository-but-mergify-actually-did-it">
+</div>
+<div class="section" id="i-see-a-rebase-and-force-push-done-by-a-member-of-the-repository-but-mergify-actually-did-it">
 <h2>I see a rebase and force-push done by a member of the repository, but Mergify actually did it.<a class="headerlink" href="#i-see-a-rebase-and-force-push-done-by-a-member-of-the-repository-but-mergify-actually-did-it" title="Permalink to this headline"> 🔗</a></h2>
 <p>See <a class="reference internal" href="../actions/merge/#strict-rebase"><span class="std std-ref">Strict Rebase</span></a>.</p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>

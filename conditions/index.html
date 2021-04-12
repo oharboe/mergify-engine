@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-<meta content="Mergify Documentation for Conditions" name="description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Mergify Documentation for Conditions" name="description" />
 <meta content="mergify, conditions" name="keywords" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -180,14 +179,14 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="conditions">
+  <div class="section" id="conditions">
 <span id="id1"></span><h1>🎯 Conditions<a class="headerlink" href="#conditions" title="Permalink to this headline"> 🔗</a></h1>
 <p>Conditions are used in pull request rules and queue rules to check if a pull
 request matches a certain rule. If a pull request matches all of the listed
 conditions in a rule, the subsequent actions listed in that rule will be
 applied. Conditions must be listed under the <code class="docutils literal notranslate"><span class="pre">conditions</span></code> section of the
 <code class="docutils literal notranslate"><span class="pre">pull_request_rules</span></code> or <code class="docutils literal notranslate"><span class="pre">queue_rules</span></code> entries — see <a class="reference internal" href="../configuration/#configuration-file-format"><span class="std std-ref">🔖 Configuration File</span></a>.</p>
-<section id="grammar">
+<div class="section" id="grammar">
 <h2>Grammar<a class="headerlink" href="#grammar" title="Permalink to this headline"> 🔗</a></h2>
 <p>A condition is a string that has the following format:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="s2">&quot;-&quot;</span> <span class="p">]</span> <span class="p">[</span> <span class="s2">&quot;#&quot;</span> <span class="p">]</span> <span class="o">&lt;</span><span class="n">attribute</span><span class="o">&gt;</span> <span class="p">[</span> <span class="o">&lt;</span><span class="n">operator</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span> <span class="p">]</span>
@@ -225,8 +224,8 @@ of contributors who approved the pull request.</p></li>
 pull request.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-merged</span></code> matches if the pull requested has not been merged.</p></li>
 </ul>
-</section>
-<section id="attributes">
+</div>
+<div class="section" id="attributes">
 <span id="id2"></span><h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline"> 🔗</a></h2>
 <p>Here’s the list of pull request attribute that can be used in conditions:</p>
 <table class="colwidths-given docutils align-default">
@@ -382,8 +381,8 @@ details.</p></td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="operators">
+</div>
+<div class="section" id="operators">
 <span id="id3"></span><h2>Operators<a class="headerlink" href="#operators" title="Permalink to this headline"> 🔗</a></h2>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -442,8 +441,8 @@ It’s usually used to compare against the length of a list using the
 </tr>
 </tbody>
 </table>
-</section>
-<section id="how-to-match-lists">
+</div>
+<div class="section" id="how-to-match-lists">
 <h2>How To Match Lists<a class="headerlink" href="#how-to-match-lists" title="Permalink to this headline"> 🔗</a></h2>
 <p>Some attributes have a type of <code class="docutils literal notranslate"><span class="pre">list</span></code>. Most <a class="reference internal" href="#operators">Operators</a> are able to match
 value against lists: they will iterate over all the values of the list and
@@ -475,8 +474,8 @@ modified in the pull request.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-files~=^src/</span></code> is <strong>true</strong> if none of the files that are modified are in
 the <code class="docutils literal notranslate"><span class="pre">src</span></code> directory.</p></li>
 </ul>
-</section>
-<section id="implementing-or-conditions">
+</div>
+<div class="section" id="implementing-or-conditions">
 <h2>Implementing Or Conditions<a class="headerlink" href="#implementing-or-conditions" title="Permalink to this headline"> 🔗</a></h2>
 <p>The <cite>conditions</cite> do not support the <cite>or</cite> operation. As Mergify evaluates and
 apply every matching rules from your configuration, you can implement multiple
@@ -501,10 +500,10 @@ rules in order to have this.</p>
         <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
 </pre></div>
 </div>
-</section>
-<section id="about-status-checks">
+</div>
+<div class="section" id="about-status-checks">
 <h2>About Status Checks<a class="headerlink" href="#about-status-checks" title="Permalink to this headline"> 🔗</a></h2>
-<section id="generic-status-check">
+<div class="section" id="generic-status-check">
 <h3>Generic Status Check<a class="headerlink" href="#generic-status-check" title="Permalink to this headline"> 🔗</a></h3>
 <p>When using the <code class="docutils literal notranslate"><span class="pre">check-success</span></code>, <code class="docutils literal notranslate"><span class="pre">check-neutral</span></code> and <code class="docutils literal notranslate"><span class="pre">check-failure</span></code>
 conditions, you need to use the name of your check service. This can be find by
@@ -517,8 +516,8 @@ this checks succeed before doing any action should be written as:</p>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">check-success=Uno.UI - CI</span>
 </pre></div>
 </div>
-</section>
-<section id="github-actions">
+</div>
+<div class="section" id="github-actions">
 <h3>GitHub Actions<a class="headerlink" href="#github-actions" title="Permalink to this headline"> 🔗</a></h3>
 <p>GitHub Actions works slightly differently. To match a status check when using
 GitHub Action, only the job name is used.</p>
@@ -528,8 +527,8 @@ GitHub Action, only the job name is used.</p>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">check-success=A job to say hello</span>
 </pre></div>
 </div>
-</section>
-<section id="validating-all-status-check">
+</div>
+<div class="section" id="validating-all-status-check">
 <h3>Validating All Status Check<a class="headerlink" href="#validating-all-status-check" title="Permalink to this headline"> 🔗</a></h3>
 <p>A common situation is to require a condition that is true when “every status
 checks (CI) pass” — especially before executing the <a class="reference internal" href="../actions/merge/#merge-action"><span class="std std-ref">merge</span></a> action.</p>
@@ -557,9 +556,9 @@ created and before any service report its status (see point 2. above).</p></li>
 that have <code class="docutils literal notranslate"><span class="pre">build</span></code> in their name (see point 1. above).</p></li>
 </ul>
 <p>Such conditions won’t do what you want them to do.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
           </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-<meta content="Mergify Documentation for Queue Action" name="description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Mergify Documentation for Queue Action" name="description" />
 <meta content="mergify, queue, pull request" name="keywords" />
 <meta content="Put a pull request in queue before merging." name="summary" />
 <meta content="train" name="doc:icon" />
@@ -187,14 +186,14 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="queue">
+  <div class="section" id="queue">
 <span id="queue-action"></span><h1>queue<a class="headerlink" href="#queue" title="Permalink to this headline"> 🔗</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">queue</span></code> action moves the pull request into one of the merge queue defined
 in <a class="reference internal" href="#queue-rules"><span class="std std-ref">Queue Rules</span></a>.</p>
 <p>Merge queues prevent merging broken pull requests by serializing their merge.
 Merging broken pull requests can happen when outdated pull requests are being
 merged in their base branch.</p>
-<section id="why-queues">
+<div class="section" id="why-queues">
 <h2>Why Queues?<a class="headerlink" href="#why-queues" title="Permalink to this headline"> 🔗</a></h2>
 <p id="merge-queue-problem">To understand the problem queues resolve, imagine the following situation:</p>
 <ul class="simple">
@@ -222,7 +221,7 @@ did not test the pull request with the <cite>new commit</cite> added to the base
 This <cite>new commit</cite> might have introduced some new tests in the base branch while
 the pull request was open. That pull request may not have the correct code to
 pass this new test.</p>
-<section id="using-queues">
+<div class="section" id="using-queues">
 <h3>Using Queues<a class="headerlink" href="#using-queues" title="Permalink to this headline"> 🔗</a></h3>
 <p>Using a merge queue solves that issue by updating any pull request that is not
 up-to-date with its base branch before being merged. That forces the continuous
@@ -244,9 +243,9 @@ is outdated like this:</p>
 the base branch before merging:</p>
 <div class="graphviz"><img src="../../_images/graphviz-10b07361fd8ac8b4e3e2eb5386d9fb3821407ba8.png" alt="strict merge" class="graphviz" /></div>
 <p>That way, there’s no way to merge a broken pull request into the base branch.</p>
-</section>
-</section>
-<section id="configuring-the-merge-queues">
+</div>
+</div>
+<div class="section" id="configuring-the-merge-queues">
 <h2>Configuring the Merge Queues<a class="headerlink" href="#configuring-the-merge-queues" title="Permalink to this headline"> 🔗</a></h2>
 <p>The <cite>merge queues</cite> rely on two configuration items: the <code class="docutils literal notranslate"><span class="pre">queues_rules</span></code> and
 the <code class="docutils literal notranslate"><span class="pre">queue</span></code> action.</p>
@@ -261,15 +260,15 @@ to merge the pull request.</p>
 <p>When multiple queues are defined, they are processed one after the other in the
 order they are defined in the <code class="docutils literal notranslate"><span class="pre">queue_rules</span></code> list. Queue processing is blocked
 until all preceding queues are empty.</p>
-</section>
-<section id="viewing-the-merge-queue">
+</div>
+<div class="section" id="viewing-the-merge-queue">
 <h2>Viewing the Merge Queue<a class="headerlink" href="#viewing-the-merge-queue" title="Permalink to this headline"> 🔗</a></h2>
 <p>The merge queue can be visualized from your <a class="reference external" href="https://dashboard.mergify.io">dashboard</a>:</p>
-<figure class="align-default">
+<div class="figure align-default">
 <img alt="The merge queue from the dashboard" src="../../_images/merge-queue.png" />
-</figure>
-</section>
-<section id="speculative-checks">
+</div>
+</div>
+<div class="section" id="speculative-checks">
 <span id="id1"></span><h2>Speculative Checks<a class="headerlink" href="#speculative-checks" title="Permalink to this headline"> 🔗</a></h2>
 <p><div class="feature-tag"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan<br/>Feature 🦾</span></a></div></p>
 <p>Merging pull requests one by one serially can take a lot of time, depending on
@@ -284,12 +283,10 @@ where multiple queued pull requests are merged together.</p>
 integration pipelines can run on all of them in parallel. Currently, Mergify
 embarks up from 1 to 20 pull requests into the merge train (you can set the
 value with the <code class="docutils literal notranslate"><span class="pre">speculative_checks</span></code> settings in <code class="docutils literal notranslate"><span class="pre">queue_rules</span></code>).</p>
-<figure class="align-default" id="id5">
+<div class="figure align-default" id="id5">
 <div class="graphviz"><img src="../../_images/graphviz-778c7bc579a1248df647b483c60ac1a33070521e.png" alt="Merge train" class="graphviz" /></div>
-<figcaption>
-<p><span class="caption-text">A merge queue with 5 pull requests and <code class="docutils literal notranslate"><span class="pre">speculative_checks</span></code> set to 3</span><a class="headerlink" href="#id5" title="Permalink to this image"> 🔗</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-text">A merge queue with 5 pull requests and <code class="docutils literal notranslate"><span class="pre">speculative_checks</span></code> set to 3</span><a class="headerlink" href="#id5" title="Permalink to this image"> 🔗</a></p>
+</div>
 <p>In the above example, three pull requests are tested at the same time by the
 continuous integration system: <code class="docutils literal notranslate"><span class="pre">PR</span> <span class="pre">#1</span></code>, <code class="docutils literal notranslate"><span class="pre">PR</span> <span class="pre">#1</span> <span class="pre">+</span> <span class="pre">PR</span> <span class="pre">#2</span></code> and <code class="docutils literal notranslate"><span class="pre">PR</span> <span class="pre">#1</span> <span class="pre">+</span> <span class="pre">PR</span> <span class="pre">#2</span>
 <span class="pre">+</span> <span class="pre">PR#3</span></code>. By creating temporary pull requests that combine multiple pull
@@ -308,10 +305,10 @@ merge train and starts over the process.</p>
 <p>If an embarked pull request doesn’t match the <code class="docutils literal notranslate"><span class="pre">queue_rules</span></code> anymore, it is
 removed from the merge train. All pull requests embarked after it are
 disembarked and re-embarked.</p>
-</section>
-<section id="options">
+</div>
+<div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline"> 🔗</a></h2>
-<section id="id2">
+<div class="section" id="id2">
 <h3>Queue Action<a class="headerlink" href="#id2" title="Permalink to this headline"> 🔗</a></h3>
 <p>These are the options of the <code class="docutils literal notranslate"><span class="pre">queue</span></code> action:</p>
 <table class="colwidths-given docutils align-default">
@@ -380,8 +377,8 @@ end of the title.</p></li>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="queue-rules">
+</div>
+<div class="section" id="queue-rules">
 <span id="id3"></span><h3>Queue Rules<a class="headerlink" href="#queue-rules" title="Permalink to this headline"> 🔗</a></h3>
 <p>A <code class="docutils literal notranslate"><span class="pre">queue_rules</span></code> takes the following parameter:</p>
 <table class="colwidths-given docutils align-default">
@@ -418,11 +415,11 @@ See <a class="reference internal" href="#speculative-checks"><span class="std st
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-<section id="examples">
+</div>
+</div>
+<div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"> 🔗</a></h2>
-<section id="single-queue">
+<div class="section" id="single-queue">
 <h3>🐛 Single Queue<a class="headerlink" href="#single-queue" title="Permalink to this headline"> 🔗</a></h3>
 <p>A simple usage of the queue is to merge pull requests serially, ensuring they
 all pass the CI one after the other. The following example defines a queue
@@ -446,8 +443,8 @@ in the queue, it will be updated with the latest commit of its base branch.</p>
         <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">default</span>
 </pre></div>
 </div>
-</section>
-<section id="multiple-queues">
+</div>
+<div class="section" id="multiple-queues">
 <h3>🚥 Multiple Queues<a class="headerlink" href="#multiple-queues" title="Permalink to this headline"> 🔗</a></h3>
 <p>By using multiple queues, it’s possible to put some pull requests in a higher
 priority queue. As queues are processed one after the other, the following
@@ -488,8 +485,8 @@ into the queue as soon as it’s approved by 2 developers but before the CI has
 even run on it. It will be in front of the <code class="docutils literal notranslate"><span class="pre">default</span></code> queue. Mergify will
 update the pull request with its base branch if necessary, wait for the CI to
 pass and then merge the pull request.</p>
-</section>
-<section id="id4">
+</div>
+<div class="section" id="id4">
 <h3>🎲 Speculative Checks<a class="headerlink" href="#id4" title="Permalink to this headline"> 🔗</a></h3>
 <p><div class="feature-tag"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan<br/>Feature 🦾</span></a></div></p>
 <p>If your continuous integration system takes a long time to validate the
@@ -516,9 +513,9 @@ three enqueued pull requests are mergeable.</p>
         <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">default</span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
           </div>
