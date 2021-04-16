@@ -220,7 +220,7 @@ it.</p>
 CI system you use.</p>
 <p>You can tweak this rule as you want. For example, you could use a label such as
 <code class="docutils literal notranslate"><span class="pre">work-in-progress</span></code> to indicate that a pull request is not ready to be merged
-— even if's approved:</p>
+— even if’s approved:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for master when CI passes and 2 reviews and not WIP</span>
     <span class="nt">conditions</span><span class="p">:</span>
@@ -254,7 +254,7 @@ touch. You can use the <code class="docutils literal notranslate"><span class="p
 <p>This tweak is useful when you want Mergify to merge only data files which can
 be validated by a script or a linter.</p>
 <p>The below sample merges only if <code class="docutils literal notranslate"><span class="pre">data.json</span></code> changed and if the pull request
-passes Circle CI's validation tests:</p>
+passes Circle CI’s validation tests:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge on CircleCI success if only data.json is changed</span>
     <span class="nt">conditions</span><span class="p">:</span>
@@ -342,7 +342,7 @@ labelled as <code class="docutils literal notranslate"><span class="pre">work-in
 </pre></div>
 </div>
 <p>In that case, if a pull request gets labelled with <code class="docutils literal notranslate"><span class="pre">work-in-progress</span></code>, it
-won't be merged, even if approved by 2 contributors and having Travis CI
+won’t be merged, even if approved by 2 contributors and having Travis CI
 passing.</p>
 </div>
 <div class="section" id="using-labels-to-prioritize-merge">
@@ -395,8 +395,8 @@ from <cite>dependabot</cite> will always be merged last.</p>
 <div class="section" id="require-all-requested-reviews-to-be-approved">
 <h2><a class="toc-backref" href="#id13">🙅️ Require All Requested Reviews to Be Approved</a><a class="headerlink" href="#require-all-requested-reviews-to-be-approved" title="Permalink to this headline"> 🔗</a></h2>
 <p>If all requested reviews have been approved, then the number of
-<code class="docutils literal notranslate"><span class="pre">review-requested</span></code> should become 0. That's not a sufficient condition to
-merge though, as you also want to make sure there's at least one positive
+<code class="docutils literal notranslate"><span class="pre">review-requested</span></code> should become 0. That’s not a sufficient condition to
+merge though, as you also want to make sure there’s at least one positive
 review.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge when all requested reviews are valid</span>
@@ -409,7 +409,7 @@ review.</p>
           <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
 </pre></div>
 </div>
-<p>Note that if a requested review is dismissed, then it doesn't count as a review
+<p>Note that if a requested review is dismissed, then it doesn’t count as a review
 that would prevent the merge.</p>
 </div>
 <div class="section" id="matching-pull-requests-with-task-lists">
@@ -443,7 +443,7 @@ before, e.g., doing a merge.</p>
 <div class="section" id="bots">
 <h2><a class="toc-backref" href="#id15">🤖 Bots</a><a class="headerlink" href="#bots" title="Permalink to this headline"> 🔗</a></h2>
 <p>Some pull requests might be created automatically by other tools, such as the
-ones sending automatic dependencies update. You might decide that there's no
+ones sending automatic dependencies update. You might decide that there’s no
 need to manually review and approve those pull request as long as your
 continuous integration system validates them.</p>
 <p>The rules below are examples for such services: they are designed to
@@ -453,7 +453,7 @@ CI check name here — adjust it to whatever you use.</p>
 <div class="section" id="dependabot">
 <h3>Dependabot<a class="headerlink" href="#dependabot" title="Permalink to this headline"> 🔗</a></h3>
 <p><a class="reference external" href="https://github.com/features/security">Dependabot</a> is the bot behind GitHub
-automatic security update. It sends automatic updates for your project's
+automatic security update. It sends automatic updates for your project’s
 dependencies, making sure they are secure.</p>
 <p>You can automate the merge of pull request created by <cite>dependabot</cite> with a rule
 such as:</p>
@@ -487,7 +487,7 @@ updates from <cite>1.x</cite> to <cite>1.y</cite> will be automatically merged. 
 <div class="section" id="snyk">
 <h3>Snyk<a class="headerlink" href="#snyk" title="Permalink to this headline"> 🔗</a></h3>
 <p><a class="reference external" href="https://snyk.io">Snyk</a> sends automatic updates for your
-project's dependencies.</p>
+project’s dependencies.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for Snyk pull requests</span>
     <span class="nt">conditions</span><span class="p">:</span>
@@ -503,7 +503,7 @@ project's dependencies.</p>
 <div class="section" id="renovate">
 <h3>Renovate<a class="headerlink" href="#renovate" title="Permalink to this headline"> 🔗</a></h3>
 <p><a class="reference external" href="https://renovatebot.com/">Renovate</a> sends automatic updates for your
-project's dependencies.</p>
+project’s dependencies.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for Renovate pull requests</span>
     <span class="nt">conditions</span><span class="p">:</span>
@@ -518,7 +518,7 @@ project's dependencies.</p>
 <div class="section" id="requires-io">
 <h3>Requires.io<a class="headerlink" href="#requires-io" title="Permalink to this headline"> 🔗</a></h3>
 <p><a class="reference external" href="https://requires.io/">Requires.io</a> sends automatic updates for your
-project's dependencies (only Python's packages).</p>
+project’s dependencies (only Python’s packages).</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for Requires.io pull requests</span>
     <span class="nt">conditions</span><span class="p">:</span>
@@ -533,7 +533,7 @@ project's dependencies (only Python's packages).</p>
 </div>
 <div class="section" id="pyup">
 <h3>PyUp<a class="headerlink" href="#pyup" title="Permalink to this headline"> 🔗</a></h3>
-<p><a class="reference external" href="https://pyup.io/">PyUp</a> sends automatic updates for your project's
+<p><a class="reference external" href="https://pyup.io/">PyUp</a> sends automatic updates for your project’s
 Python dependencies.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for PyUp pull requests</span>

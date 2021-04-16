@@ -214,7 +214,7 @@ file format is entirely documented in <a class="reference internal" href="../con
 which contains a list of rules.</p>
 <p>Each rule is composed of 3 elements:</p>
 <ul class="simple">
-<li><p>A <em>name</em> that describes what the rule does. It's not interpreted by Mergify
+<li><p>A <em>name</em> that describes what the rule does. It’s not interpreted by Mergify
 and can be anything you like that helps you identify the rule.</p></li>
 <li><p>A list of <em>conditions</em>. Each conditions must match for the rule to be
 applied.</p></li>
@@ -229,9 +229,9 @@ matches the <em>conditions</em>.</p></li>
 <p>Mergify is event-driven: rules are only executed when pull requests are updated
 or when the bot is manually triggered in a comment with <cite>&#64;Mergifyio refresh</cite> (see <a class="reference internal" href="../commands/#commands"><span class="std std-ref">⚙️ Commands</span></a>).</p>
 </div>
-<p>Let's create a first rule that will merge the pull request as soon as it has
+<p>Let’s create a first rule that will merge the pull request as soon as it has
 been approved by one contributor.</p>
-<p>Here's the relevant configuration file content:</p>
+<p>Here’s the relevant configuration file content:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Automatic merge ⬇️ on approval ✔</span>
     <span class="nt">conditions</span><span class="p">:</span>

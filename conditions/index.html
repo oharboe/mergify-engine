@@ -195,7 +195,7 @@ applied. Conditions must be listed under the <code class="docutils literal notra
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">#</span></code> character is considered as a comment delimiter in YAML. As <code class="docutils literal notranslate"><span class="pre">#</span></code>
-is the length operator in Mergify's conditions system, don't forget to use
+is the length operator in Mergify’s conditions system, don’t forget to use
 <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> around the condition to write valid YAML syntax.</p>
 </div>
 <div class="admonition note">
@@ -209,7 +209,7 @@ is the length operator in Mergify's conditions system, don't forget to use
 value rather than its content.</p></li>
 <li><p>An <code class="docutils literal notranslate"><span class="pre">attribute</span></code> is a property of a pull request, such as its author, its
 title or its base branch.</p></li>
-<li><p>An <code class="docutils literal notranslate"><span class="pre">operator</span></code> is used to determine how the match between the pull request's
+<li><p>An <code class="docutils literal notranslate"><span class="pre">operator</span></code> is used to determine how the match between the pull request’s
 <code class="docutils literal notranslate"><span class="pre">attribute</span></code> and the defined <code class="docutils literal notranslate"><span class="pre">value</span></code> occurs.</p></li>
 </ul>
 <p>For example:</p>
@@ -227,7 +227,7 @@ pull request.</p></li>
 </div>
 <div class="section" id="attributes">
 <span id="id2"></span><h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline"> 🔗</a></h2>
-<p>Here's the list of pull request attribute that can be used in conditions:</p>
+<p>Here’s the list of pull request attribute that can be used in conditions:</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 25%" />
@@ -418,25 +418,25 @@ true if any value matches.</p></td>
 <tr class="row-odd"><td><p>Greater Than or Equal</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> or <code class="docutils literal notranslate"><span class="pre">≥</span></code></p></td>
 <td><p>This operator checks for the value to be greater than or equal to the
-provided value. It's usually used to compare against the length of a
+provided value. It’s usually used to compare against the length of a
 list using the <code class="docutils literal notranslate"><span class="pre">#</span></code> prefix.</p></td>
 </tr>
 <tr class="row-even"><td><p>Greater Than</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
 <td><p>This operator checks for the value to be greater than the provided
-value. It's usually used to compare against the length of a list using
+value. It’s usually used to compare against the length of a list using
 the <code class="docutils literal notranslate"><span class="pre">#</span></code> prefix.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Lesser Than or Equal</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> or <code class="docutils literal notranslate"><span class="pre">≤</span></code></p></td>
 <td><p>This operator checks for the value to be lesser then or equal to the
-provided value. It's usually used to compare against the length of a
+provided value. It’s usually used to compare against the length of a
 list using the <code class="docutils literal notranslate"><span class="pre">#</span></code> prefix.</p></td>
 </tr>
 <tr class="row-even"><td><p>Lesser Than</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
 <td><p>This operator checks for the value to be lesser than the provided value.
-It's usually used to compare against the length of a list using the
+It’s usually used to compare against the length of a list using the
 <code class="docutils literal notranslate"><span class="pre">#</span></code> prefix.</p></td>
 </tr>
 </tbody>
@@ -530,15 +530,15 @@ GitHub Action, only the job name is used.</p>
 </div>
 <div class="section" id="validating-all-status-checks">
 <h3>Validating All Status Checks<a class="headerlink" href="#validating-all-status-checks" title="Permalink to this headline"> 🔗</a></h3>
-<p>A common condition is to require that &quot;every status check (CI) passes&quot; —
+<p>A common condition is to require that “every status check (CI) passes” —
 especially before executing the <a class="reference internal" href="../actions/merge/#merge-action"><span class="std std-ref">merge</span></a> action.</p>
-<p><strong>There is no such thing as &quot;every status check&quot; in GitHub.</strong></p>
-<p>Here's why:</p>
+<p><strong>There is no such thing as “every status check” in GitHub.</strong></p>
+<p>Here’s why:</p>
 <ol class="arabic simple">
 <li><p>Each pull request can have its own custom list of status checks.</p></li>
 <li><p>On creation, or when a new commit is pushed, a pull request has <strong>no</strong>
 status check.</p></li>
-<li><p>A status check might not be reported by a service (CI) (e.g., because it's
+<li><p>A status check might not be reported by a service (CI) (e.g., because it’s
 broken) and therefore be absent.</p></li>
 </ol>
 <p>Those three facts make it <strong>mandatory</strong> to write explicitly the checks that are
@@ -553,10 +553,10 @@ every status check that is expected, e.g.:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">#check-failure=0</span></code>, because this will be true as soon as the pull request is
 created and before any service report its status (see point 2. above).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">check-success~=build</span></code> while expecting this to wait for &quot;all&quot; status checks
+<li><p><code class="docutils literal notranslate"><span class="pre">check-success~=build</span></code> while expecting this to wait for “all” status checks
 that have <code class="docutils literal notranslate"><span class="pre">build</span></code> in their name (see point 1. and 2.above).</p></li>
 </ul>
-<p>Such conditions won't do what you want them to do.</p>
+<p>Such conditions won’t do what you want them to do.</p>
 </div>
 </div>
 </div>

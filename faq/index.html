@@ -181,19 +181,19 @@
 <h2>Mergify is unable to merge my pull request due to my branch protection settings<a class="headerlink" href="#mergify-is-unable-to-merge-my-pull-request-due-to-my-branch-protection-settings" title="Permalink to this headline"> 🔗</a></h2>
 <p>This happens usually if you limit the people that have the authorization to
 merge pull requests. To make it works with Mergify you must add <code class="docutils literal notranslate"><span class="pre">Mergify</span></code> to the
-branch protection settings in the &quot;<cite>Restrict who can push to matching branches</cite>&quot; list.</p>
+branch protection settings in the “<cite>Restrict who can push to matching branches</cite>” list.</p>
 <img alt="../_images/mergify-push-user.png" src="../_images/mergify-push-user.png" />
 </div>
 <div class="section" id="why-did-mergify-seem-to-have-merged-my-pull-request-whereas-all-conditions-were-not-true">
 <h2>Why did Mergify seem to have merged my pull request whereas all conditions were not true?<a class="headerlink" href="#why-did-mergify-seem-to-have-merged-my-pull-request-whereas-all-conditions-were-not-true" title="Permalink to this headline"> 🔗</a></h2>
 <p>The GitHub user interface might be misleading you in thinking that your pull
-request has been merged by Mergify, while it wasn't.</p>
+request has been merged by Mergify, while it wasn’t.</p>
 <p>If your pull request A has all its commits contained in another pull request B,
 and if B is merged by Mergify, then A will appeared to have been merged by
-Mergify too. GitHub detects that A's commits are a subset of B's commits and
+Mergify too. GitHub detects that A’s commits are a subset of B’s commits and
 therefore decides to automatically marks pull request A as merged.</p>
 <p>Be sure that Mergify did nothing on the pull request A if it told you so in the
-<cite>Checks</cite> tab. Don't be fooled by GitHub UI.</p>
+<cite>Checks</cite> tab. Don’t be fooled by GitHub UI.</p>
 </div>
 <div class="section" id="i-see-a-rebase-and-force-push-done-by-a-member-of-the-repository-but-mergify-actually-did-it">
 <h2>I see a rebase and force-push done by a member of the repository, but Mergify actually did it.<a class="headerlink" href="#i-see-a-rebase-and-force-push-done-by-a-member-of-the-repository-but-mergify-actually-did-it" title="Permalink to this headline"> 🔗</a></h2>
