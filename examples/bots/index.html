@@ -174,7 +174,7 @@
   <div class="section" id="bots">
 <h1>🤖 Bots<a class="headerlink" href="#bots" title="Permalink to this headline"> 🔗</a></h1>
 <p>Some pull requests might be created automatically by other tools, such as the
-ones sending automatic dependencies update. You might decide that there’s no
+ones sending automatic dependencies update. You might decide that there's no
 need to manually review and approve those pull request as long as your
 continuous integration system validates them.</p>
 <p>The rules below are examples for such services: they are designed to
@@ -184,7 +184,7 @@ CI check name here — adjust it to whatever you use.</p>
 <div class="section" id="dependabot">
 <h2>Dependabot<a class="headerlink" href="#dependabot" title="Permalink to this headline"> 🔗</a></h2>
 <p><a class="reference external" href="https://github.com/features/security">Dependabot</a> is the bot behind GitHub
-automatic security update. It sends automatic updates for your project’s
+automatic security update. It sends automatic updates for your project's
 dependencies, making sure they are secure.</p>
 <p>You can automate the merge of pull request created by <cite>dependabot</cite> with a rule
 such as:</p>
@@ -218,7 +218,7 @@ updates from <cite>1.x</cite> to <cite>1.y</cite> will be automatically merged. 
 <div class="section" id="snyk">
 <h2>Snyk<a class="headerlink" href="#snyk" title="Permalink to this headline"> 🔗</a></h2>
 <p><a class="reference external" href="https://snyk.io">Snyk</a> sends automatic updates for your
-project’s dependencies.</p>
+project's dependencies.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for Snyk pull requests</span>
     <span class="nt">conditions</span><span class="p">:</span>
@@ -234,7 +234,7 @@ project’s dependencies.</p>
 <div class="section" id="renovate">
 <h2>Renovate<a class="headerlink" href="#renovate" title="Permalink to this headline"> 🔗</a></h2>
 <p><a class="reference external" href="https://renovatebot.com/">Renovate</a> sends automatic updates for your
-project’s dependencies.</p>
+project's dependencies.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for Renovate pull requests</span>
     <span class="nt">conditions</span><span class="p">:</span>
@@ -249,7 +249,7 @@ project’s dependencies.</p>
 <div class="section" id="requires-io">
 <h2>Requires.io<a class="headerlink" href="#requires-io" title="Permalink to this headline"> 🔗</a></h2>
 <p><a class="reference external" href="https://requires.io/">Requires.io</a> sends automatic updates for your
-project’s dependencies (only Python’s packages).</p>
+project's dependencies (only Python's packages).</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for Requires.io pull requests</span>
     <span class="nt">conditions</span><span class="p">:</span>
@@ -264,7 +264,7 @@ project’s dependencies (only Python’s packages).</p>
 </div>
 <div class="section" id="pyup">
 <h2>PyUp<a class="headerlink" href="#pyup" title="Permalink to this headline"> 🔗</a></h2>
-<p><a class="reference external" href="https://pyup.io/">PyUp</a> sends automatic updates for your project’s
+<p><a class="reference external" href="https://pyup.io/">PyUp</a> sends automatic updates for your project's
 Python dependencies.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for PyUp pull requests</span>

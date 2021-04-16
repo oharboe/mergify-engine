@@ -203,9 +203,9 @@ passing correctly.</p></li>
 </ul>
 <p>The state of the repository can be represented like this:</p>
 <div class="graphviz"><img src="../../_images/graphviz-37a87eb05921955db02ff2d0a0dba469d3093d8e.png" alt="Pull request is open" class="graphviz" /></div>
-<p>While the pull request is open, another commit is pushed to <code class="docutils literal notranslate"><span class="pre">main</span></code> — let’s
+<p>While the pull request is open, another commit is pushed to <code class="docutils literal notranslate"><span class="pre">main</span></code> — let's
 call it <cite>new commit</cite>. That new commit can be pushed directly to <code class="docutils literal notranslate"><span class="pre">main</span></code> or
-merged from another pull request; it doesn’t matter.</p>
+merged from another pull request; it doesn't matter.</p>
 <p>The tests are run against the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch by the CI, and they pass. The
 state of the repository and its continuous integration system can be now
 described like this:</p>
@@ -242,7 +242,7 @@ is outdated like this:</p>
 <p>Mergify will make sure the pull request #2 is updated with the latest tip of
 the base branch before merging:</p>
 <div class="graphviz"><img src="../../_images/graphviz-10b07361fd8ac8b4e3e2eb5386d9fb3821407ba8.png" alt="strict merge" class="graphviz" /></div>
-<p>That way, there’s no way to merge a broken pull request into the base branch.</p>
+<p>That way, there's no way to merge a broken pull request into the base branch.</p>
 </div>
 </div>
 <div class="section" id="configuring-the-merge-queues">
@@ -302,7 +302,7 @@ request <code class="docutils literal notranslate"><span class="pre">PR</span> <
 <span class="pre">#1</span> <span class="pre">+</span> <span class="pre">PR</span> <span class="pre">#2</span> <span class="pre">+</span> <span class="pre">PR</span> <span class="pre">#3</span></code> and <code class="docutils literal notranslate"><span class="pre">PR</span> <span class="pre">#3</span></code>.</p>
 <p>In the case where a new commit is pushed on the base branch, Mergify resets the
 merge train and starts over the process.</p>
-<p>If an embarked pull request doesn’t match the <code class="docutils literal notranslate"><span class="pre">queue_rules</span></code> anymore, it is
+<p>If an embarked pull request doesn't match the <code class="docutils literal notranslate"><span class="pre">queue_rules</span></code> anymore, it is
 removed from the merge train. All pull requests embarked after it are
 disembarked and re-embarked.</p>
 </div>
@@ -446,7 +446,7 @@ in the queue, it will be updated with the latest commit of its base branch.</p>
 </div>
 <div class="section" id="multiple-queues">
 <h3>🚥 Multiple Queues<a class="headerlink" href="#multiple-queues" title="Permalink to this headline"> 🔗</a></h3>
-<p>By using multiple queues, it’s possible to put some pull requests in a higher
+<p>By using multiple queues, it's possible to put some pull requests in a higher
 priority queue. As queues are processed one after the other, the following
 example allow to add a label <code class="docutils literal notranslate"><span class="pre">urgent</span></code> to a pull request so it gets put in the
 higher priority queue.</p>
@@ -481,7 +481,7 @@ higher priority queue.</p>
 </pre></div>
 </div>
 <p>With such a configuration, a pull request with the label <code class="docutils literal notranslate"><span class="pre">urgent</span></code> will get
-into the queue as soon as it’s approved by 2 developers but before the CI has
+into the queue as soon as it's approved by 2 developers but before the CI has
 even run on it. It will be in front of the <code class="docutils literal notranslate"><span class="pre">default</span></code> queue. Mergify will
 update the pull request with its base branch if necessary, wait for the CI to
 pass and then merge the pull request.</p>

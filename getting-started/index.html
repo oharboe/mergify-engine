@@ -214,7 +214,7 @@ file format is entirely documented in <a class="reference internal" href="../con
 which contains a list of rules.</p>
 <p>Each rule is composed of 3 elements:</p>
 <ul class="simple">
-<li><p>A <em>name</em> that describes what the rule does. It’s not interpreted by Mergify
+<li><p>A <em>name</em> that describes what the rule does. It's not interpreted by Mergify
 and can be anything you like that helps you identify the rule.</p></li>
 <li><p>A list of <em>conditions</em>. Each conditions must match for the rule to be
 applied.</p></li>
@@ -229,9 +229,9 @@ matches the <em>conditions</em>.</p></li>
 <p>Mergify is event-driven: rules are only executed when pull requests are updated
 or when the bot is manually triggered in a comment with <cite>&#64;Mergifyio refresh</cite> (see <a class="reference internal" href="../commands/#commands"><span class="std std-ref">⚙️ Commands</span></a>).</p>
 </div>
-<p>Let’s create a first rule that will merge the pull request as soon as it has
+<p>Let's create a first rule that will merge the pull request as soon as it has
 been approved by one contributor.</p>
-<p>Here’s the relevant configuration file content:</p>
+<p>Here's the relevant configuration file content:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Automatic merge ⬇️ on approval ✔</span>
     <span class="nt">conditions</span><span class="p">:</span>
@@ -244,7 +244,7 @@ been approved by one contributor.</p>
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">name</span></code> of the rule is not used directly by Mergify, but is really
 useful when Mergify will report its status and for debugging rules. We advise
-setting an explicity name that makes sense to you.</p></li>
+setting an explicitly name that makes sense to you.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">conditions</span></code> defines the list of conditions that a pull request must
 match in order for the engine to execute the configured actions. In this
 example, there is only one condition to be met for the rule to be applied to
@@ -293,7 +293,7 @@ check.</p>
 <p>When a pull request is created in the repository, Mergify posts a status check
 about the state of the pull request according to the defined rules.</p>
 <img alt="status check" class="align-center" src="../_images/mergify-checks-status.png" />
-<p>When all the criterias of the rules are satisfied, Mergify executes the
+<p>When all the criteria of the rules are satisfied, Mergify executes the
 configured actions and e.g. merges the pull request.</p>
 </div>
 <div class="section" id="controlling-mergify-with-commands">
