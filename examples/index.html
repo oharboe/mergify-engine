@@ -190,18 +190,18 @@ request author, base branch, labels, files, etc.</p>
 and cover many common use cases.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#automatic-merge-when-ci-works-and-approving-reviews" id="id8">✅ Automatic Merge when CI works and approving reviews</a></p></li>
-<li><p><a class="reference internal" href="#merging-based-on-modified-files" id="id9">🗂 Merging based on Modified Files</a></p></li>
-<li><p><a class="reference internal" href="#less-strict-rules-for-stable-branches" id="id10">🏖 Less Strict Rules for Stable Branches</a></p></li>
-<li><p><a class="reference internal" href="#using-labels-to-enable-disable-merge" id="id11">🎬 Using Labels to Enable/Disable Merge</a></p></li>
-<li><p><a class="reference internal" href="#using-labels-to-prioritize-merge" id="id12">⚡️ Using Labels to Prioritize Merge</a></p></li>
-<li><p><a class="reference internal" href="#require-all-requested-reviews-to-be-approved" id="id13">🙅️ Require All Requested Reviews to Be Approved</a></p></li>
-<li><p><a class="reference internal" href="#matching-pull-requests-with-task-lists" id="id14">☑️ Matching Pull Requests with Task Lists</a></p></li>
-<li><p><a class="reference internal" href="#bots" id="id15">🤖 Bots</a></p></li>
+<li><p><a class="reference internal" href="#automatic-merge-when-ci-works-and-approving-reviews" id="id9">✅ Automatic Merge when CI works and approving reviews</a></p></li>
+<li><p><a class="reference internal" href="#merging-based-on-modified-files" id="id10">🗂 Merging based on Modified Files</a></p></li>
+<li><p><a class="reference internal" href="#less-strict-rules-for-stable-branches" id="id11">🏖 Less Strict Rules for Stable Branches</a></p></li>
+<li><p><a class="reference internal" href="#using-labels-to-enable-disable-merge" id="id12">🎬 Using Labels to Enable/Disable Merge</a></p></li>
+<li><p><a class="reference internal" href="#using-labels-to-prioritize-merge" id="id13">⚡️ Using Labels to Prioritize Merge</a></p></li>
+<li><p><a class="reference internal" href="#require-all-requested-reviews-to-be-approved" id="id14">🙅️ Require All Requested Reviews to Be Approved</a></p></li>
+<li><p><a class="reference internal" href="#matching-pull-requests-with-task-lists" id="id15">☑️ Matching Pull Requests with Task Lists</a></p></li>
+<li><p><a class="reference internal" href="#bots" id="id16">🤖 Bots</a></p></li>
 </ul>
 </div>
 <div class="section" id="automatic-merge-when-ci-works-and-approving-reviews">
-<h2><a class="toc-backref" href="#id8">✅ Automatic Merge when CI works and approving reviews</a><a class="headerlink" href="#automatic-merge-when-ci-works-and-approving-reviews" title="Permalink to this headline"> 🔗</a></h2>
+<h2><a class="toc-backref" href="#id9">✅ Automatic Merge when CI works and approving reviews</a><a class="headerlink" href="#automatic-merge-when-ci-works-and-approving-reviews" title="Permalink to this headline"> 🔗</a></h2>
 <p>This is a classic! That rule enables Mergify automatic merge when the
 continuous integration system validates the pull request and a human reviewed
 it.</p>
@@ -247,7 +247,7 @@ certain member. You could therefore write such a rule:</p>
 </div>
 </div>
 <div class="section" id="merging-based-on-modified-files">
-<h2><a class="toc-backref" href="#id9">🗂 Merging based on Modified Files</a><a class="headerlink" href="#merging-based-on-modified-files" title="Permalink to this headline"> 🔗</a></h2>
+<h2><a class="toc-backref" href="#id10">🗂 Merging based on Modified Files</a><a class="headerlink" href="#merging-based-on-modified-files" title="Permalink to this headline"> 🔗</a></h2>
 <p>You could decide to only merge some pull requests based on the files they
 touch. You can use the <code class="docutils literal notranslate"><span class="pre">files</span></code> attribute to access the modified file list and
 <code class="docutils literal notranslate"><span class="pre">#files</span></code> to access the number of files.</p>
@@ -281,7 +281,7 @@ the pull requests when the CI passes and when all the files are inside the
 </div>
 </div>
 <div class="section" id="less-strict-rules-for-stable-branches">
-<h2><a class="toc-backref" href="#id10">🏖 Less Strict Rules for Stable Branches</a><a class="headerlink" href="#less-strict-rules-for-stable-branches" title="Permalink to this headline"> 🔗</a></h2>
+<h2><a class="toc-backref" href="#id11">🏖 Less Strict Rules for Stable Branches</a><a class="headerlink" href="#less-strict-rules-for-stable-branches" title="Permalink to this headline"> 🔗</a></h2>
 <p>Some projects like having easier review requirements for maintenance branches.
 That usually means having e.g. 2 review requested for merging into <code class="docutils literal notranslate"><span class="pre">master</span></code>,
 but only one for a stable branch — since those pull request are essentially
@@ -308,7 +308,7 @@ backport from <code class="docutils literal notranslate"><span class="pre">maste
 </div>
 </div>
 <div class="section" id="using-labels-to-enable-disable-merge">
-<h2><a class="toc-backref" href="#id11">🎬 Using Labels to Enable/Disable Merge</a><a class="headerlink" href="#using-labels-to-enable-disable-merge" title="Permalink to this headline"> 🔗</a></h2>
+<h2><a class="toc-backref" href="#id12">🎬 Using Labels to Enable/Disable Merge</a><a class="headerlink" href="#using-labels-to-enable-disable-merge" title="Permalink to this headline"> 🔗</a></h2>
 <p>Some developers are not comfortable with fully automatic merge — they like
 having a final word before merging the code. In that case, you can add a
 condition using a <a class="reference external" href="https://help.github.com/articles/labeling-issues-and-pull-requests/">label</a>:</p>
@@ -346,7 +346,7 @@ won’t be merged, even if approved by 2 contributors and having Travis CI
 passing.</p>
 </div>
 <div class="section" id="using-labels-to-prioritize-merge">
-<h2><a class="toc-backref" href="#id12">⚡️ Using Labels to Prioritize Merge</a><a class="headerlink" href="#using-labels-to-prioritize-merge" title="Permalink to this headline"> 🔗</a></h2>
+<h2><a class="toc-backref" href="#id13">⚡️ Using Labels to Prioritize Merge</a><a class="headerlink" href="#using-labels-to-prioritize-merge" title="Permalink to this headline"> 🔗</a></h2>
 <p><div class="feature-tag"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan<br/>Feature 🦾</span></a></div></p>
 <p>When <code class="docutils literal notranslate"><span class="pre">smart</span></code> <a class="reference internal" href="../actions/merge/#strict-merge"><span class="std std-ref">Strict Merge</span></a> is enabled and many pull requests are
 waiting to be merged, some of them might be more urgent. In that case, you
@@ -393,7 +393,7 @@ requests with the label <code class="docutils literal notranslate"><span class="
 from <cite>dependabot</cite> will always be merged last.</p>
 </div>
 <div class="section" id="require-all-requested-reviews-to-be-approved">
-<h2><a class="toc-backref" href="#id13">🙅️ Require All Requested Reviews to Be Approved</a><a class="headerlink" href="#require-all-requested-reviews-to-be-approved" title="Permalink to this headline"> 🔗</a></h2>
+<h2><a class="toc-backref" href="#id14">🙅️ Require All Requested Reviews to Be Approved</a><a class="headerlink" href="#require-all-requested-reviews-to-be-approved" title="Permalink to this headline"> 🔗</a></h2>
 <p>If all requested reviews have been approved, then the number of
 <code class="docutils literal notranslate"><span class="pre">review-requested</span></code> should become 0. That’s not a sufficient condition to
 merge though, as you also want to make sure there’s at least one positive
@@ -413,7 +413,7 @@ review.</p>
 that would prevent the merge.</p>
 </div>
 <div class="section" id="matching-pull-requests-with-task-lists">
-<h2><a class="toc-backref" href="#id14">☑️ Matching Pull Requests with Task Lists</a><a class="headerlink" href="#matching-pull-requests-with-task-lists" title="Permalink to this headline"> 🔗</a></h2>
+<h2><a class="toc-backref" href="#id15">☑️ Matching Pull Requests with Task Lists</a><a class="headerlink" href="#matching-pull-requests-with-task-lists" title="Permalink to this headline"> 🔗</a></h2>
 <p><a class="reference external" href="https://guides.github.com/features/mastering-markdown/">GitHub Markdown</a>
 allows users to use task lists in their pull request body. Task lists render
 with clickable checkboxes in comments and you can select or deselect the
@@ -441,7 +441,7 @@ before, e.g., doing a merge.</p>
 </div>
 </div>
 <div class="section" id="bots">
-<h2><a class="toc-backref" href="#id15">🤖 Bots</a><a class="headerlink" href="#bots" title="Permalink to this headline"> 🔗</a></h2>
+<h2><a class="toc-backref" href="#id16">🤖 Bots</a><a class="headerlink" href="#bots" title="Permalink to this headline"> 🔗</a></h2>
 <p>Some pull requests might be created automatically by other tools, such as the
 ones sending automatic dependencies update. You might decide that there’s no
 need to manually review and approve those pull request as long as your
@@ -539,6 +539,21 @@ Python dependencies.</p>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for PyUp pull requests</span>
     <span class="nt">conditions</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">author=pyup-bot</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">check-success=Travis CI - Pull Request</span>
+    <span class="nt">actions</span><span class="p">:</span>
+      <span class="nt">merge</span><span class="p">:</span>
+        <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="depfu">
+<h3>Depfu<a class="headerlink" href="#depfu" title="Permalink to this headline"> 🔗</a></h3>
+<p><a class="reference external" href="https://depfu.com/">Depfu</a> notifies you automatically about new versions of
+your Ruby, JavaScript, and Elixir project’s dependencies.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for Depfu pull requests</span>
+    <span class="nt">conditions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">author=depfu[bot]</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">check-success=Travis CI - Pull Request</span>
     <span class="nt">actions</span><span class="p">:</span>
       <span class="nt">merge</span><span class="p">:</span>
