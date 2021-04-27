@@ -266,14 +266,20 @@ the pull request to its original author.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">title</span> <span class="pre">}}</span> <span class="pre">(backport</span> <span class="pre">#{{</span> <span class="pre">number</span> <span class="pre">}})</span></code></p></td>
 <td><p>The pull request title.</p></td>
 </tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">body</span></code></p></td>
+<td><p><a class="reference internal" href="../../configuration/#data-type-template"><span class="std std-ref">Template</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">This</span> <span class="pre">is</span> <span class="pre">an</span> <span class="pre">automatic</span> <span class="pre">backport</span> <span class="pre">of</span> <span class="pre">pull</span> <span class="pre">request</span> <span class="pre">#{{number}}</span> <span class="pre">done</span> <span class="pre">by</span> <span class="pre">[Mergify](https://mergify.io).\n{{cherry_pick_error}}</span></code></p></td>
+<td><p>The pull request body.</p></td>
+</tr>
 </tbody>
 </table>
-<p>As the <code class="docutils literal notranslate"><span class="pre">title</span></code> is a <a class="reference internal" href="../../configuration/#data-type-template"><span class="std std-ref">template</span></a>, you can
+<p>As the <code class="docutils literal notranslate"><span class="pre">title</span></code> and <code class="docutils literal notranslate"><span class="pre">body</span></code> are <a class="reference internal" href="../../configuration/#data-type-template"><span class="std std-ref">templates</span></a>, you can
 leverage any pull request attributes to use as content, e.g. <code class="docutils literal notranslate"><span class="pre">{{author}}</span></code>.
 You can also use this additional variable:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">destination_branch</span> <span class="pre">}}</span></code>: the name of destination branch.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">cherry_pick_error</span> <span class="pre">}}</span></code>: the cherry pick error message if any (only available in <code class="docutils literal notranslate"><span class="pre">body</span></code>).</p></li>
 </ul>
 </div></blockquote>
 </div>
