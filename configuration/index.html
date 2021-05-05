@@ -187,7 +187,7 @@
 <ul class="simple">
 <li><p>The file named <code class="docutils literal notranslate"><span class="pre">.mergify.yml</span></code>, or, as a fallback, <code class="docutils literal notranslate"><span class="pre">.mergify/config.yml</span></code> or <code class="docutils literal notranslate"><span class="pre">.github/mergify.yml</span></code>
 from the root directory.</p></li>
-<li><p>In the default repository branch configured on GitHub — usually <code class="docutils literal notranslate"><span class="pre">master</span></code>.</p></li>
+<li><p>In the default repository branch configured on GitHub — usually <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
 </ul>
 </div>
 <div class="section" id="format">
@@ -324,9 +324,9 @@ your <a class="reference internal" href="../conditions/#conditions"><span class=
         <span class="nt">add</span><span class="p">:</span>
           <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
 
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for master when the title does not contain “WIP” (ignoring case)</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for main when the title does not contain “WIP” (ignoring case)</span>
     <span class="nt">conditions</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">base=master</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">base=main</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-title~=(?i)wip</span>
     <span class="nt">actions</span><span class="p">:</span>
       <span class="nt">merge</span><span class="p">:</span>
@@ -390,7 +390,7 @@ request, you can use the following command line:</p>
         <div>&copy; Copyright 2021, Mergify</div>
     </div>
     <div>
-      <a href="https://github.com/Mergifyio/mergify-engine/tree/master/docs/source/configuration.rst"
+      <a href="https://github.com/Mergifyio/mergify-engine/tree/main/docs/source/configuration.rst"
          class="btn btn-dark btn-sm active">
         Edit on GitHub <i class="fas fa-external-link-square-alt"></i>
       </a>

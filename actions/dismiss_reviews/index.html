@@ -243,7 +243,7 @@ as the pull request gets updated with new commits.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">remove outdated reviews</span>
     <span class="nt">conditions</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">base=master</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">base=main</span>
     <span class="nt">actions</span><span class="p">:</span>
       <span class="nt">dismiss_reviews</span><span class="p">:</span>
 </pre></div>
@@ -254,7 +254,7 @@ trusted, even if they update their code:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">pull_request_rules</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">remove outdated reviews for non trusted authors</span>
     <span class="nt">conditions</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">base=master</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">base=main</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">author!=@mytrustedteam</span>
     <span class="nt">actions</span><span class="p">:</span>
       <span class="nt">dismiss_reviews</span><span class="p">:</span>
@@ -278,7 +278,7 @@ trusted, even if they update their code:</p>
         <div>&copy; Copyright 2021, Mergify</div>
     </div>
     <div>
-      <a href="https://github.com/Mergifyio/mergify-engine/tree/master/docs/source/actions/dismiss_reviews.rst"
+      <a href="https://github.com/Mergifyio/mergify-engine/tree/main/docs/source/actions/dismiss_reviews.rst"
          class="btn btn-dark btn-sm active">
         Edit on GitHub <i class="fas fa-external-link-square-alt"></i>
       </a>
