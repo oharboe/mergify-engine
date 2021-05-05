@@ -373,9 +373,35 @@ details.</p></td>
 This is the name of a <em>status check</em> such as
 <cite>continuous-integration/travis-ci/pr</cite> or of a <em>check run</em> such as
 <cite>Travis CI - Pull Request</cite>. See <a class="reference internal" href="#about-status-checks">About Status Checks</a> for more
+details.
+Checks that report being cancelled, timed out, and action
+required are also considered as failures.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">check-skipped</span></code></p></td>
+<td><p>list of string</p></td>
+<td><p>The list of status checks that was skipped for the pull request.
+This is the name of a <em>status check</em> such as
+<cite>continuous-integration/travis-ci/pr</cite> or of a <em>check run</em> such as
+<cite>Travis CI - Pull Request</cite>. See <a class="reference internal" href="#about-status-checks">About Status Checks</a> for more
 details.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">title</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">check-pending</span></code></p></td>
+<td><p>list of string</p></td>
+<td><p>The list of status checks that is pending for the pull request.
+This is the name of a <em>status check</em> such as
+<cite>continuous-integration/travis-ci/pr</cite> or of a <em>check run</em> such as
+<cite>Travis CI - Pull Request</cite>. See <a class="reference internal" href="#about-status-checks">About Status Checks</a> for more
+details.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">check-stale</span></code></p></td>
+<td><p>list of string</p></td>
+<td><p>The list of status checks that are stale for the pull request.
+This is the name of a <em>status check</em> such as
+<cite>continuous-integration/travis-ci/pr</cite> or of a <em>check run</em> such as
+<cite>Travis CI - Pull Request</cite>. See <a class="reference internal" href="#about-status-checks">About Status Checks</a> for more
+details.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">title</span></code></p></td>
 <td><p>string</p></td>
 <td><p>The title of the pull request.</p></td>
 </tr>
@@ -505,7 +531,8 @@ rules in order to have this.</p>
 <h2>About Status Checks<a class="headerlink" href="#about-status-checks" title="Permalink to this headline"> 🔗</a></h2>
 <div class="section" id="generic-status-check">
 <h3>Generic Status Check<a class="headerlink" href="#generic-status-check" title="Permalink to this headline"> 🔗</a></h3>
-<p>When using the <code class="docutils literal notranslate"><span class="pre">check-success</span></code>, <code class="docutils literal notranslate"><span class="pre">check-neutral</span></code> and <code class="docutils literal notranslate"><span class="pre">check-failure</span></code>
+<p>When using the <code class="docutils literal notranslate"><span class="pre">check-success</span></code>, <code class="docutils literal notranslate"><span class="pre">check-neutral</span></code>, <code class="docutils literal notranslate"><span class="pre">check-failure</span></code>,
+<code class="docutils literal notranslate"><span class="pre">check-skipped</span></code>, <code class="docutils literal notranslate"><span class="pre">check-pending</span></code>, and <code class="docutils literal notranslate"><span class="pre">check-stale</span></code>
 conditions, you need to use the name of your check service. This can be find by
 opening an existing pull request and scrolling down near the <code class="docutils literal notranslate"><span class="pre">Merge</span></code> button.</p>
 <img alt="Status check example" src="../_images/status-check-example.png" />
