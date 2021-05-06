@@ -367,7 +367,16 @@ This is the name of a <em>status check</em> such as
 <cite>Travis CI - Pull Request</cite>. See <a class="reference internal" href="#about-status-checks">About Status Checks</a> for more
 details.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">check-failure</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">check-success-or-neutral</span></code></p></td>
+<td><p>list of string</p></td>
+<td><p>The list of status checks that successfully passed or are neutral for
+the pull request.
+This is the name of a <em>status check</em> such as
+<cite>continuous-integration/travis-ci/pr</cite> or of a <em>check run</em> such as
+<cite>Travis CI - Pull Request</cite>. See <a class="reference internal" href="#about-status-checks">About Status Checks</a> for more
+details.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">check-failure</span></code></p></td>
 <td><p>list of string</p></td>
 <td><p>The list of status checks that failed for the pull request.
 This is the name of a <em>status check</em> such as
@@ -377,7 +386,7 @@ details.
 Checks that report being cancelled, timed out, and action
 required are also considered as failures.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">check-skipped</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">check-skipped</span></code></p></td>
 <td><p>list of string</p></td>
 <td><p>The list of status checks that was skipped for the pull request.
 This is the name of a <em>status check</em> such as
@@ -385,7 +394,7 @@ This is the name of a <em>status check</em> such as
 <cite>Travis CI - Pull Request</cite>. See <a class="reference internal" href="#about-status-checks">About Status Checks</a> for more
 details.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">check-pending</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">check-pending</span></code></p></td>
 <td><p>list of string</p></td>
 <td><p>The list of status checks that is pending for the pull request.
 This is the name of a <em>status check</em> such as
@@ -393,7 +402,7 @@ This is the name of a <em>status check</em> such as
 <cite>Travis CI - Pull Request</cite>. See <a class="reference internal" href="#about-status-checks">About Status Checks</a> for more
 details.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">check-stale</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">check-stale</span></code></p></td>
 <td><p>list of string</p></td>
 <td><p>The list of status checks that are stale for the pull request.
 This is the name of a <em>status check</em> such as
@@ -401,7 +410,7 @@ This is the name of a <em>status check</em> such as
 <cite>Travis CI - Pull Request</cite>. See <a class="reference internal" href="#about-status-checks">About Status Checks</a> for more
 details.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">title</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">title</span></code></p></td>
 <td><p>string</p></td>
 <td><p>The title of the pull request.</p></td>
 </tr>
