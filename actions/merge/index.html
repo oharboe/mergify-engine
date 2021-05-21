@@ -192,6 +192,7 @@
 <p>Mergify always respects the <a class="reference external" href="https://docs.github.com/en/github/administering-a-repository/about-protected-branches">branch protection</a> settings. When the conditions
 match and the <code class="docutils literal notranslate"><span class="pre">merge</span></code> action runs, Mergify waits for the branch protection to
 be validated before merging the pull request.</p>
+<p>Mergify also waits for dependent pull requests to get merged first (see <a class="reference internal" href="#queue-depends-on"><span class="std std-ref">⛓️ Defining Pull Request Dependencies</span></a>).</p>
 <section id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">🔗</a></h2>
 <table class="colwidths-given docutils align-default">
@@ -301,6 +302,28 @@ end of the title.</p></li>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="defining-pull-request-dependencies">
+<span id="queue-depends-on"></span><h2>⛓️ Defining Pull Request Dependencies<a class="headerlink" href="#defining-pull-request-dependencies" title="Permalink to this headline">🔗</a></h2>
+<p><div class="feature-tag"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan<br/>Feature 🦾</span></a></div>
+<div class="feature-tag"><span class="badge badge-primary">Open Source<br /> Feature 💖</span></div></p>
+<p>You can specify dependencies between pull requests from the same repository.
+Mergify waits for the linked pull requests to be merged before merging any pull
+request with a <code class="docutils literal notranslate"><span class="pre">Depends-On:</span></code> header.</p>
+<p>To use this feature, adds the <code class="docutils literal notranslate"><span class="pre">Depends-On:</span></code> header to the body of your pull
+request:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>New awesome feature 🎉
+
+To get the full picture, you may need to look at these pull requests:
+
+Depends-On: <span class="ni">#42</span>
+Depends-On: https://github.com/organization/repository/pull/123
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This feature does not work for cross-repository dependencies.</p>
+</div>
 </section>
 <section id="defining-the-commit-message">
 <span id="commit-message"></span><h2>Defining the Commit Message<a class="headerlink" href="#defining-the-commit-message" title="Permalink to this headline">🔗</a></h2>
