@@ -270,6 +270,9 @@ Here's the list of pull request attribute that can be used in conditions:
        or one of ``Mon``, ``Tue``, ``Wed``, ``Thu``, ``Fri``, ``Sat``, ``Sun``
        ``Monday``, ``Tuesday``, ``Wednesday``, ``Thursday``, ``Friday``,
        ``Saturday``, ``Sunday``.
+   * - ``calendar``
+     - string
+     - A calendar, e.g.: ``Mon-Fri``, ``12:00-18:00`` or ``Mon-Fri 12:00-18:00``
 
 
 .. important::
@@ -279,6 +282,7 @@ Here's the list of pull request attribute that can be used in conditions:
    never be true.
 
    ``current-time`` does not support ``~=``, ``=`` and ``!=`` operators.
+   ``calendar`` only support ``=`` and ``!=``
 
 
 .. _Operators:
