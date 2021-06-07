@@ -227,7 +227,8 @@ report an error if rebase is not possible.</p></td>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">strict</span></code></p></td>
 <td><p>Boolean, <code class="docutils literal notranslate"><span class="pre">smart</span></code> or <code class="docutils literal notranslate"><span class="pre">smart+fasttrack</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
-<td><p>Determines whether to use <a class="reference internal" href="#strict-merge"><span class="std std-ref">Strict Merge</span></a>:</p>
+<td><p><div class="feature-tag"><span class="badge badge-danger">Deprecated 😵</span></div>
+Determines whether to use <a class="reference internal" href="#strict-merge"><span class="std std-ref">Strict Merge</span></a>:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">true</span></code> enables <a class="reference internal" href="#strict-merge"><span class="std std-ref">Strict Merge</span></a>. The pull request will be merged
 only once up-to-date with its base branch. When multiple pull requests
@@ -250,7 +251,8 @@ base branch.</p></li>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">strict_method</span></code></p></td>
 <td><p>string</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">merge</span></code></p></td>
-<td><p>Method to use to update the pull request with its base branch
+<td><p><div class="feature-tag"><span class="badge badge-danger">Deprecated 😵</span></div>
+Method to use to update the pull request with its base branch
 when <a class="reference internal" href="#strict-merge"><span class="std std-ref">Strict Merge</span></a> is enabled. Possible values:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">merge</span></code> to merge the base branch into the pull request.</p></li>
@@ -282,6 +284,7 @@ logged in Mergify dashboard once.</p></td>
 <td><p>1 &lt;= integer &lt;= 10000 or <code class="docutils literal notranslate"><span class="pre">low</span></code> or <code class="docutils literal notranslate"><span class="pre">medium</span></code> or <code class="docutils literal notranslate"><span class="pre">high</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">medium</span></code></p></td>
 <td><p><div class="feature-tag"><a href="https://mergify.io/pricing" target="_blank"><span class="badge badge-warning">Premium Plan<br/>Feature 🦾</span></a></div>
+<div class="feature-tag"><span class="badge badge-danger">Deprecated 😵</span></div>
 This sets the priority of the pull request in the queue when <code class="docutils literal notranslate"><span class="pre">smart</span></code>
 <a class="reference internal" href="#strict-merge"><span class="std std-ref">Strict Merge</span></a> is enabled. The pull request with the highest priority is merged first.
 <code class="docutils literal notranslate"><span class="pre">low</span></code>, <code class="docutils literal notranslate"><span class="pre">medium</span></code>, <code class="docutils literal notranslate"><span class="pre">high</span></code> are aliases for <code class="docutils literal notranslate"><span class="pre">1000</span></code>, <code class="docutils literal notranslate"><span class="pre">2000</span></code>, <code class="docutils literal notranslate"><span class="pre">3000</span></code>.</p></td>
@@ -364,10 +367,12 @@ by writing using the <a class="reference internal" href="../../configuration/#da
 </section>
 <section id="strict-merge">
 <span id="id1"></span><h2>Strict Merge<a class="headerlink" href="#strict-merge" title="Permalink to this headline">🔗</a></h2>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>While <cite>strict merge</cite> solves most issues, the <a class="reference internal" href="../queue/#queue-action"><span class="std std-ref">queue action</span></a> and its <a class="reference internal" href="../queue/#queue-rules"><span class="std std-ref">queue rules</span></a> provide a more powerful
-solution and offer total control of the merge queue.</p>
+<p><div class="feature-tag"><span class="badge badge-danger">Deprecated 😵</span></div></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><cite>strict merge</cite> has been deprecated. The <a class="reference internal" href="../queue/#queue-action"><span class="std std-ref">queue action</span></a>
+and its <a class="reference internal" href="../queue/#queue-rules"><span class="std std-ref">queue rules</span></a> provide a more powerful solution
+and offer total control of the merge queue.</p>
 </div>
 <p>The <cite>strict merge</cite> option enables a simple merge queue that prevents merging
 broken pull requests. That situation can arise when outdated pull requests are
