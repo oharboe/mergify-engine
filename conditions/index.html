@@ -441,8 +441,19 @@ details.</p></td>
 <td><p>string</p></td>
 <td><p>The title of the pull request.</p></td>
 </tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">current-time</span></code></p></td>
+<td><p>string</p></td>
+<td><p>The current time in format <code class="docutils literal notranslate"><span class="pre">HH:MM</span></code>.</p></td>
+</tr>
 </tbody>
 </table>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Time-based conditions have a 5 minutes precision at best. Do not write
+conditions based on time ranges that are too narrow or the condition might
+never be true.</p>
+<p><code class="docutils literal notranslate"><span class="pre">current-time</span></code> does not support <code class="docutils literal notranslate"><span class="pre">~=</span></code>, <code class="docutils literal notranslate"><span class="pre">=</span></code> and <code class="docutils literal notranslate"><span class="pre">!=</span></code> operators.</p>
+</div>
 </section>
 <section id="operators">
 <span id="id3"></span><h2>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">🔗</a></h2>
