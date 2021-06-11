@@ -223,12 +223,17 @@ from the root directory.</p></li>
 <td><p>The name of the rule. This is not used by the engine directly, but is
 used when reporting information about a rule.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">conditions</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">disabled</span></code></p></td>
+<td><p>dictionary with <code class="docutils literal notranslate"><span class="pre">reason</span></code> key</p></td>
+<td><p>This optional key allows to disabled a rule and cancel any ongoing
+actions. A reason must be set using the <code class="docutils literal notranslate"><span class="pre">reason</span></code> key.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">conditions</span></code></p></td>
 <td><p>list of <a class="reference internal" href="../conditions/#conditions"><span class="std std-ref">🎯 Conditions</span></a></p></td>
 <td><p>A list of <a class="reference internal" href="../conditions/#conditions"><span class="std std-ref">🎯 Conditions</span></a> string that must match against the pull
 request for the rule to be applied.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">actions</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">actions</span></code></p></td>
 <td><p>dictionary of <a class="reference internal" href="../actions/#actions"><span class="std std-ref">🚀 Actions</span></a></p></td>
 <td><p>A dictionary made of <a class="reference internal" href="../actions/#actions"><span class="std std-ref">🚀 Actions</span></a> that will be executed on the
 matching pull requests.</p></td>
@@ -332,6 +337,26 @@ your <a class="reference internal" href="../conditions/#conditions"><span class=
     <span class="nt">actions</span><span class="p">:</span>
       <span class="nt">merge</span><span class="p">:</span>
         <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="disabling-rules">
+<h3>Disabling Rules<a class="headerlink" href="#disabling-rules" title="Permalink to this headline">🔗</a></h3>
+<p>You can disable a rule while keeping it in the configuration. This allows
+gracefully handling the cancellation of any ongoing actions (e.g., like stopping
+the merge queue).</p>
+<section id="id2">
+<h4>Examples<a class="headerlink" href="#id2" title="Permalink to this headline">🔗</a></h4>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automatic merge for main when the title does not contain “WIP” (ignoring case)</span>
+  <span class="nt">disabled</span><span class="p">:</span>
+    <span class="nt">reason</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">code freeze</span>
+  <span class="nt">conditions</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">base=main</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-title~=(?i)wip</span>
+  <span class="nt">actions</span><span class="p">:</span>
+    <span class="nt">merge</span><span class="p">:</span>
+      <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">merge</span>
 </pre></div>
 </div>
 </section>
